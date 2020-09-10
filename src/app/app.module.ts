@@ -12,9 +12,12 @@ import { MoviesReducer } from './store/reducers/movies.reducer';
 // modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FeatureModule } from './modules/feature/feature.module';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { MoviesComponent } from './components/layout/movies/movies.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, MoviesComponent],
   imports: [
     BrowserModule,
     FeatureModule,

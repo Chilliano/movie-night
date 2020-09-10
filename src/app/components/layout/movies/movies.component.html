@@ -1,0 +1,6 @@
+<p>movies works!</p>
+<li *ngFor="let movie of movies$ | async">
+  <button mat-button color="primary">
+    {{ movie?.name }}
+  </button>
+</li>
