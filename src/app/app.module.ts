@@ -15,6 +15,8 @@ import { FeatureModule } from './modules/feature/feature.module';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { MoviesComponent } from './components/layout/movies/movies.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, MoviesComponent],
@@ -27,6 +29,7 @@ import { MoviesComponent } from './components/layout/movies/movies.component';
       movies: MoviesReducer,
     }),
     BrowserAnimationsModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
