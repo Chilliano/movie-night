@@ -1,5 +1,8 @@
 <p>movies works!</p>
-<li *ngFor="let movie of movies$ | async">
+<li
+  (click)="selectMovieDetails(movie.id)"
+  *ngFor="let movie of movies$ | async"
+>
   <button mat-button color="primary">
     {{ movie?.name }}
   </button>

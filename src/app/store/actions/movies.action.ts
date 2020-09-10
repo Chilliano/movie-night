@@ -1,10 +1,14 @@
 import { Action } from '@ngrx/store';
 import { MoviesActionTypes } from '../types/movies.types';
 
-// Always return an array even for one
 export class GetMoviesAction implements Action {
   readonly type = MoviesActionTypes.GET_MOVIES;
-  constructor() {}
+  constructor(public payload?: string[] | number[]) {}
 }
 
-export type MoviesAction = GetMoviesAction;
+export class GetMovieDetails implements Action {
+  readonly type = MoviesActionTypes.GET_MOVIE_DETAILS;
+  constructor(public payload: number) {}
+}
+
+export type MoviesAction = GetMoviesAction | GetMovieDetails;

@@ -3,6 +3,7 @@ import { AppState } from '../../../store/app-state';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MoviesModel } from '../../../store/models/movies.model';
+import { GetMovieDetails } from 'app/store/actions/movies.action';
 
 @Component({
   selector: 'app-movies',
@@ -16,5 +17,9 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.movies$ = this.store.select((store) => store.movies);
+  }
+
+  selectMovieDetails(id): void {
+    this.store.dispatch(new GetMovieDetails(id));
   }
 }

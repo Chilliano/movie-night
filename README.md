@@ -4,3 +4,4 @@
 
 - @ngrx/store
 - @angular/material
+- @ngrx/store-devtools

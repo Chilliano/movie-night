@@ -9,11 +9,14 @@ export function MoviesReducer(
   state: Array<MoviesModel> = initialState,
   action: MoviesAction
 ) {
-  const { type } = action;
+  const { type, payload } = action;
 
   switch (type) {
     case MoviesActionTypes.GET_MOVIES:
       return [...state];
+    case MoviesActionTypes.GET_MOVIE_DETAILS:
+      const match = initialState.filter((movie) => movie.id === payload);
+      return [...match];
     default:
       return state;
   }
