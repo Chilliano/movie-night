@@ -3,13 +3,15 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "baseUrl": "./src",
+    "paths": {
+      "@store/*": ["/app/store/*"],
+      "@store-models/*": ["/app/store/models/*"],
+      "@types/*": ["/app/store/types/*"],
+      "@actions/*": ["/app/store/actions/*"]
+    }
   },
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ]
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.d.ts"]
 }

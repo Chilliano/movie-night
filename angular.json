@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "betsson-final"
+    }
+  },
+  "defaultProject": "betsson-final",
+  "cli": {
+    "analytics": "e17ce100-a27d-4370-a538-60fc8e3b36da"
+  }
 }
