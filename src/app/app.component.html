@@ -1,4 +1,6 @@
 <router-outlet></router-outlet>
 <li *ngFor="let movie of movies$ | async">
-  {{ movie.name }}
+  <button mat-button color="primary">
+    {{ movie.name }}
+  </button>
 </li>

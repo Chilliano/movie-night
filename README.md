@@ -2,4 +2,5 @@
 
 ## Build Steps
 
-- **@ngrx/store**
+- @ngrx/store
+- @angular/material
