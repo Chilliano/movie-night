@@ -2,4 +2,4 @@
 
 ## Build Steps
 
-npm i @ngrx/store
+- **@ngrx/store**
