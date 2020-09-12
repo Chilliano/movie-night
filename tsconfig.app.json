@@ -7,12 +7,10 @@
     "types": [],
     "baseUrl": "src",
     "paths": {
-      "@core/*": ["app/modules/core/*"],
       "@store/*": ["app/modules/core/store/*"],
       "@models/*": ["app/modules/core/store/models/*"],
       "@actions/*": ["app/modules/core/store/actions/*"],
-      "@assets/*": ["assets/*"],
-      "@images/*": ["images/*"],
+      "@images/*": ["assets/images/*"],
       "@styles/*": ["assets/styles/*"],
       "@components/*": ["app/components/*"]
     }
