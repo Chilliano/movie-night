@@ -15,6 +15,7 @@
     "baseUrl": "src",
     "paths": {
       "@store/*": ["app/modules/core/store/*"],
+      "@assets/*": ["assets/*"],
       "@models/*": ["app/modules/core/store/models/*"],
       "@actions/*": ["app/modules/core/store/actions/*"],
       "@images/*": ["assets/images/*"],

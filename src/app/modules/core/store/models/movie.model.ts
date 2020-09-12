@@ -1,4 +1,4 @@
-export interface MovieModel {
+export class MovieModel {
   id: number;
   key: string;
   name: string;

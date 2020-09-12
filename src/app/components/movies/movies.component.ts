@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MovieModel } from '@models/movies.model';
+import { MovieModel } from '@models/movie.model';
 
 @Component({
   selector: 'app-movies',
