@@ -1,5 +1,9 @@
-import { MoviesModel } from './models/movies.model';
+import {
+  moviesInitialState,
+  filterStringInitialState,
+} from './adapters/adapters';
 
-export interface AppState {
-  readonly movies: Array<MoviesModel>;
-}
+export const appState = {
+  movies: moviesInitialState,
+  filterString: filterStringInitialState,
+};
