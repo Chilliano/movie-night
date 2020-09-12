@@ -1,15 +1,21 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": [],
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "paths": {
-      "@store/*": ["/app/store/*"],
-      "@store-models/*": ["/app/store/models/*"],
-      "@types/*": ["/app/store/types/*"],
-      "@actions/*": ["/app/store/actions/*"]
+      "@store/*": ["app/store/*"],
+      "@core/*": ["app/modules/core/*"],
+      "@components/*": ["app/components/*"],
+      "@models/*": ["app/modules/core/store/models/*"],
+      "@actions/*": ["app/modules/core/store/actions/*"],
+      "@types/*": ["app/modules/core/store/types/*"],
+      "@reducers/*": ["app/store/reducers/*"],
+      "@assets/*": ["app/assets/*"],
+      "@styles/*": ["assets/styles/*"]
     }
   },
   "files": ["src/main.ts", "src/polyfills.ts"],

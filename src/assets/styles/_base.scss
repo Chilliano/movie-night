@@ -1,0 +1,12 @@
+html {
+  font-size: 75%; // 1 rem = 10px;10px/16px = 62.5%;
+  @include respond($breakpoint-desktop) {
+    font-size: 75%; // 1 rem = 12; 12/16px = 75%;
+  }
+  @include respond($breakpoint-tab) {
+    font-size: 56.25%;
+  }
+  @include respond($breakpoint-phone) {
+    font-size: 50%;
+  }
+}

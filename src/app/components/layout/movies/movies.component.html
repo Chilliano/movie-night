@@ -4,6 +4,6 @@
   *ngFor="let movie of movies$ | async"
 >
   <button mat-button color="primary">
-    {{ movie?.name }}
+    {{ movie ? movie.name : "Testing" }}
   </button>
 </li>
