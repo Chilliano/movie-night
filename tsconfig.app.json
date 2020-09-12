@@ -3,6 +3,8 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
     "outDir": "./out-tsc/app",
     "types": [],
     "baseUrl": "src",
