@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { MoviesModel } from '@models/movies.model';
-// import { GetMovieDetails } from 'app/store/actions/movies.action';
+import { MovieModel } from '@models/movies.model';
 
 @Component({
   selector: 'app-movies',
@@ -10,15 +8,11 @@ import { MoviesModel } from '@models/movies.model';
   styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent implements OnInit {
-  movies$: Observable<Array<MoviesModel>>;
+  movies$: Observable<Array<MovieModel>>;
 
   constructor() {}
 
-  ngOnInit(): void {
-    // this.movies$ = this.store.select((store) => store.movies);
-  }
+  ngOnInit(): void {}
 
-  selectMovieDetails(id): void {
-    // this.store.dispatch(new GetMovieDetails(id));
-  }
+  selectMovieDetails(id): void {}
 }

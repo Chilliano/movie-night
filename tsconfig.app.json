@@ -7,15 +7,14 @@
     "types": [],
     "baseUrl": "src",
     "paths": {
-      "@store/*": ["app/store/*"],
       "@core/*": ["app/modules/core/*"],
-      "@components/*": ["app/components/*"],
+      "@store/*": ["app/modules/core/store/*"],
       "@models/*": ["app/modules/core/store/models/*"],
       "@actions/*": ["app/modules/core/store/actions/*"],
-      "@types/*": ["app/modules/core/store/types/*"],
-      "@reducers/*": ["app/store/reducers/*"],
-      "@assets/*": ["app/assets/*"],
-      "@styles/*": ["assets/styles/*"]
+      "@assets/*": ["assets/*"],
+      "@images/*": ["images/*"],
+      "@styles/*": ["assets/styles/*"],
+      "@components/*": ["app/components/*"]
     }
   },
   "files": ["src/main.ts", "src/polyfills.ts"],

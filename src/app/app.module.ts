@@ -8,7 +8,7 @@ import { AppComponent } from './modules/core/app/app.component';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppReducer } from '@core/store/app.reducer';
+
 // modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FeatureModule } from 'app/modules/feature/feature.module';
@@ -29,9 +29,6 @@ import { MoviesComponent } from '@components/layout/movies/movies.component';
     FeatureModule,
     FormsModule,
     AppRoutingModule,
-    StoreModule.forRoot({
-      app: AppReducer,
-    }),
     BrowserAnimationsModule,
     StoreDevtoolsModule.instrument({
       maxAge: 25,
