@@ -1,14 +1,17 @@
 import AppState, { initializeState } from '@store/app.state';
-import { createReducer, Action, on } from '@ngrx/store';
-import * as MovieActions from '@actions/movies.action';
+import { createReducer, on } from '@ngrx/store';
+import * as MovieActions from '@store/actions/movie.actions';
 
-export const intialState = initializeState();
+export const initialState = initializeState();
 
-export const reducer = createReducer(
-  intialState,
-  on(MovieActions.GetAllMoviesAction, (state) => state)
+export const _appReducer = createReducer(
+  initialState,
+  on(MovieActions.getAllMovies, (state) => state),
+  on(MovieActions.updateSearchTerm, (state, { searchTerm }) => {
+    return {
+      ...state,
+      searchTerm: searchTerm,
+    };
+  }),
+  on(MovieActions.reset, (state) => initialState)
 );
-
-export function AppReducer(state: AppState | undefined, action: Action) {
-  return reducer(state, action);
-}

@@ -1,5 +1,4 @@
-import { MoviesService } from '@services/movies.service';
-import { AppReducer } from './modules/core/store/appReducer';
+import { _appReducer } from './modules/core/store/appReducer';
 import { FeatureModule } from './modules/feature/feature.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from '@components/layout/header/header.component';
 import { FooterComponent } from '@components/layout/footer/footer.component';
 import { MoviesComponent } from '@components/movies/movies.component';
+import { EffectsModule } from '@ngrx/effects';
+import { FilterOnSearchTermPipe } from './pipes/filter-on-search-term.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MoviesComponent } from '@components/movies/movies.component';
     HeaderComponent,
     FooterComponent,
     MoviesComponent,
+    FilterOnSearchTermPipe,
   ],
   imports: [
     BrowserModule,
@@ -32,13 +34,13 @@ import { MoviesComponent } from '@components/movies/movies.component';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ app: AppReducer }),
+    StoreModule.forRoot({ app: _appReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
   ],
-  providers: [MoviesService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

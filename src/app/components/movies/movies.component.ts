@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieModel } from '@models/movie.model';
-import { Store } from '@ngrx/store';
-import AppState from '@store/app.state';
-
+import { MoviesService } from 'app/services/movies.service';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent implements OnInit {
-  movies$: Observable<MovieModel[]> = this.store.select(
-    (state) => state.app.movies
-  );
+  movies$: Observable<MovieModel[]>;
   moviesError: Error = null;
+  searchTerm$: Observable<string>;
+  localSearchTermRef = '';
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private movieService: MoviesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.movies$ = this.movieService.getAllMovies();
+    this.searchTerm$ = this.movieService.getSearchTerm();
+  }
 
-  selectMovieDetails(id): void {}
+  updateSearchTerm(e) {
+    this.movieService.updateSearchTerm(e.target.value);
+  }
 }
