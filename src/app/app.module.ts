@@ -19,6 +19,8 @@ import { FooterComponent } from '@components/layout/footer/footer.component';
 import { MoviesComponent } from '@components/movies/movies.component';
 import { EffectsModule } from '@ngrx/effects';
 import { FilterOnSearchTermPipe } from './pipes/filter-on-search-term.pipe';
+// services
+import { MoviesService } from 'app/services/movies.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { FilterOnSearchTermPipe } from './pipes/filter-on-search-term.pipe';
       logOnly: environment.production,
     }),
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

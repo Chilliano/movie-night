@@ -1,6 +1,6 @@
 import { MovieModel } from '@store/models/movie.model';
 import { Pipe, PipeTransform } from '@angular/core';
-import { parseString } from '@functions/parse-string';
+import { parseString } from '../functions/parse-string';
 
 @Pipe({
   name: 'filterOnSearchTerm',
