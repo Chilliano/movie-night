@@ -21,7 +21,8 @@
       "@images/*": ["assets/images/*"],
       "@styles/*": ["assets/styles/*"],
       "@components/*": ["app/components/*"],
-      "@services/*": ["app/services/*"]
+      "@services/*": ["app/services/*"],
+      "@functions/*": ["app/functions/*"]
     }
   }
 }

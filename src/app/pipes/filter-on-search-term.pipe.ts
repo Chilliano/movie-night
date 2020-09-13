@@ -1,5 +1,6 @@
 import { MovieModel } from '@store/models/movie.model';
 import { Pipe, PipeTransform } from '@angular/core';
+import { parseString } from '@functions/parse-string';
 
 @Pipe({
   name: 'filterOnSearchTerm',
@@ -8,25 +9,25 @@ export class FilterOnSearchTermPipe implements PipeTransform {
   transform(list: MovieModel[], searchTerm: string) {
     return searchTerm.length
       ? list.filter((item) => {
-          const nameIncludes = item.name
-            .toLocaleLowerCase()
-            .includes(searchTerm.toLocaleLowerCase());
-          const descriptionIncludes = item.description
-            .toLocaleLowerCase()
-            .includes(searchTerm.toLocaleLowerCase());
-          const genresIncludes = item.genres
-            .map((genre) => genre.toLocaleLowerCase())
-            .includes(searchTerm.toLocaleLowerCase());
-          const rateIncludes = item.rate
-            .toLocaleLowerCase()
-            .includes(searchTerm.toLocaleLowerCase());
+          const includedInItem = {
+            isIncluded: function () {
+              let pName = parseString(this.name);
+              let pDescription = parseString(this.description);
+              let pGenres = parseString(
+                this.genres.map((genre) => parseString(genre)).join()
+              );
 
-          return nameIncludes ||
-            descriptionIncludes ||
-            genresIncludes ||
-            rateIncludes
-            ? item
-            : null;
+              let pSearchTerm = parseString(searchTerm);
+
+              const res =
+                pName.includes(pSearchTerm) ||
+                pDescription.includes(pSearchTerm) ||
+                pGenres.includes(pSearchTerm);
+
+              return res ? true : false;
+            },
+          };
+          return includedInItem.isIncluded.apply(item) ? item : false;
         })
       : list;
   }
