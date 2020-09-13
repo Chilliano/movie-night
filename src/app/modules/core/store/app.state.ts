@@ -1,5 +1,5 @@
 import { MoviesData } from '@assets/movie.mock-data';
-import { MovieModel } from '@models/movies.model';
+import { MovieModel } from '@store/models/movie.model';
 
 export default class AppState {
   [x: string]: any;
@@ -14,6 +14,6 @@ export const initializeState = (): AppState => {
   return {
     movies: [...MoviesData],
     selectedMovie: null,
-    selectedGenres: Array[MovieModel](),
+    selectedGenres: [],
   };
 };

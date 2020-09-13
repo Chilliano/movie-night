@@ -1,3 +1,4 @@
+import { AppReducer } from './modules/core/store/appReducer';
 import { FeatureModule } from './modules/feature/feature.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -30,6 +31,7 @@ import { MoviesComponent } from '@components/movies/movies.component';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({ app: AppReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
