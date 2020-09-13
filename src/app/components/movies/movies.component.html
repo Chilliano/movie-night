@@ -1,4 +1,9 @@
 <p>movies works!</p>
+<div *ngIf="moviesError?.message">
+  <div class="alert alert-danger" role="alert">
+    Some error occurred. Please try again
+  </div>
+</div>
 <li
   (click)="selectMovieDetails(movie.id)"
   *ngFor="let movie of movies$ | async"
