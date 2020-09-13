@@ -1,5 +1,4 @@
 import { MovieModel } from './../modules/core/store/models/movie.model';
-import { TestBed, async } from '@angular/core/testing';
 import { FilterOnSearchTermPipe } from './filter-on-search-term.pipe';
 
 describe('PhonenumberPipe', () => {
@@ -43,8 +42,6 @@ describe('PhonenumberPipe', () => {
   it('should filter out any object without the searchString found in name,description and genres', () => {
     const pipe = new FilterOnSearchTermPipe();
     const result = pipe.transform(arrayList, searchString);
-    console.log('searchString', searchString);
-    console.log('arrayList', arrayList);
 
     expect(result).toEqual([
       {
@@ -61,20 +58,3 @@ describe('PhonenumberPipe', () => {
     ]);
   });
 });
-
-// describe('FilterOnSearchTermPipe', () => {
-//   var filterPipe;
-
-//   beforeEach(() => {
-//     filterPipe = new FilterOnSearchTermPipe();
-//   });
-
-//   it('create an instance', () => {
-//     expect(filterPipe).toBeTruthy();
-//   });
-
-//   it('should lowercase,concat and strip non alphanumeric characters from the input', function () {
-//     expect(filterPipe('hello') : ).toBe('HELLO');
-//     expect(filterPipe('hello world')).toBe('HELLO WORLD');
-//   });
-// });

@@ -4,7 +4,6 @@
   (input)="updateSearchTerm($event)"
   [(ngModel)]="localSearchTermRef"
 />
-Searchterm is : {{ searchTerm$ | async }}
 
 <div *ngIf="moviesError?.message">
   <div class="alert alert-danger" role="alert">
