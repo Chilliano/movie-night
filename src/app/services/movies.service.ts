@@ -10,11 +10,11 @@ export class MoviesService {
   constructor(private store: Store<AppState>) {}
 
   getSearchTerm() {
-    return this.store.select((state) => state.app.searchTerm);
+    return this.store.select((state) => state.searchTerm);
   }
 
   getAllMovies() {
-    return this.store.select((state) => state.app.movies);
+    return this.store.select((state) => state.movies);
   }
 
   updateSearchTerm(value) {

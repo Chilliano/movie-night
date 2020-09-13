@@ -36,7 +36,7 @@ import { MoviesService } from 'app/services/movies.service';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ app: _appReducer }),
+    StoreModule.forRoot({ _appReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
