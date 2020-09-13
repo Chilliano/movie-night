@@ -18,7 +18,6 @@ export class MoviesService {
   }
 
   updateSearchTerm(value) {
-    console.log('value here is ', value);
     this.store.dispatch(updateSearchTerm({ searchTerm: value }));
   }
 }
