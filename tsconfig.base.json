@@ -20,7 +20,8 @@
       "@actions/*": ["app/modules/core/store/actions/*"],
       "@images/*": ["assets/images/*"],
       "@styles/*": ["assets/styles/*"],
-      "@components/*": ["app/components/*"]
+      "@components/*": ["app/components/*"],
+      "@services/*": ["app/services/*"]
     }
   }
 }

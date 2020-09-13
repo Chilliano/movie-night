@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieModel } from '@models/movie.model';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import AppState from '@store/app.state';
 
 @Component({
@@ -10,22 +10,14 @@ import AppState from '@store/app.state';
   styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent implements OnInit {
-  movies$: Observable<Array<MovieModel>>;
+  movies$: Observable<MovieModel[]> = this.store.select(
+    (state) => state.app.movies
+  );
   moviesError: Error = null;
 
   constructor(private store: Store<AppState>) {}
 
-  ngOnInit(): void {
-    this.fetchMovies();
-  }
-
-  fetchMovies(): Observable<Array<MovieModel>> {
-    return (this.movies$ = this.store.pipe(
-      select((state: AppState) => {
-        return state.app.movies;
-      })
-    ));
-  }
+  ngOnInit(): void {}
 
   selectMovieDetails(id): void {}
 }

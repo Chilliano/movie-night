@@ -1,3 +1,4 @@
+import { MoviesService } from '@services/movies.service';
 import { AppReducer } from './modules/core/store/appReducer';
 import { FeatureModule } from './modules/feature/feature.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,7 +38,7 @@ import { MoviesComponent } from '@components/movies/movies.component';
       logOnly: environment.production,
     }),
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
