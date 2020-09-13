@@ -7,14 +7,14 @@ import AppState from '@store/app.state';
   providedIn: 'root',
 })
 export class MoviesService {
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<{ app: AppState }>) {}
 
   getSearchTerm() {
-    return this.store.select((state) => state.searchTerm);
+    return this.store.select((state) => state.app.searchTerm);
   }
 
   getAllMovies() {
-    return this.store.select((state) => state.movies);
+    return this.store.select((state) => state.app.movies);
   }
 
   updateSearchTerm(value) {

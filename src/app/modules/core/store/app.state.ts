@@ -2,7 +2,6 @@ import { MoviesData } from '@assets/movie.mock-data';
 import { MovieModel } from '@store/models/movie.model';
 
 export default class AppState {
-  // below is to avoid model difference with app key
   constructor(
     public searchTerm: string,
     public movies: MovieModel[],

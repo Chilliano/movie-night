@@ -1,4 +1,4 @@
-import AppState, { initializeState } from '@store/app.state';
+import { initializeState } from '@store/app.state';
 import { createReducer, on } from '@ngrx/store';
 import * as MovieActions from '@store/actions/movie.actions';
 
@@ -13,5 +13,5 @@ export const _appReducer = createReducer(
       searchTerm: searchTerm,
     };
   }),
-  on(MovieActions.reset, (state) => initialState)
+  on(MovieActions.reset, () => initialState)
 );
