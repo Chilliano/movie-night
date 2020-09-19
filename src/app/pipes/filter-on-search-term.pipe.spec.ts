@@ -39,7 +39,7 @@ describe('PhonenumberPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should filter out any object without the searchString found in name,description and genres', () => {
+  it('should filter out any object without the searchString found in name,description or genres', () => {
     const pipe = new FilterOnSearchTermPipe();
     const result = pipe.transform(arrayList, searchString);
 

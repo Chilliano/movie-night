@@ -1,3 +1,4 @@
+import { NotFoundComponent } from '@components/layout/not-found/not-found.component';
 import { MoviesComponent } from '@components/movies/movies.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,8 +10,12 @@ const routes: Routes = [
     component: MoviesComponent,
   },
   {
+    path: '404',
+    component: NotFoundComponent,
+  },
+  {
     path: '**',
-    redirectTo: '',
+    redirectTo: '/404',
     pathMatch: 'full',
   },
 ];
