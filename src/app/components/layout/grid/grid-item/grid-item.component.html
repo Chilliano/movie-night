@@ -1,13 +1,17 @@
 <div class="card-container">
   <div class="card">
-    <div
-      class="card--img"
-      [ngStyle]="{
-        'background-image':
-          'url(../../../../assets/images/movie-covers/' + item?.img + ')'
-      }"
-    ></div>
-    <div class="card--details">text</div>
+    <div class="card--img" style="position: relative">
+      <img
+        style="width: 100%; min-height: 100%; position: absolute"
+        src="../../../../assets/images/movie-covers/{{ item?.img }}"
+        alt=""
+      />
+    </div>
+    <div class="card--details">
+      WHASODFIJASODFJASOIDF ipsuma sdofaijsd foasdijfoasijd foaisjd
+      foasijdofaisjd foaisdjf oasidjf aosidjf oasidjf oasidjfoasidj foaisjd
+      foaisjd foaisdjf
+    </div>
     <app-button [config]="{ text: 'View Details' }"></app-button>
   </div>
 </div>

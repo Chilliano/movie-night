@@ -23,7 +23,9 @@
       "@components/*": ["app/components/*"],
       "@services/*": ["app/services/*"],
       "@functions/*": ["app/functions/*"],
-      "@animations/*": ["app/animations/*"]
+      "@animations/*": ["app/animations/*"],
+      "@directives/*": ["app/directives/*"],
+      "@pipes/*": ["app/pipes/*"]
     }
   }
 }
