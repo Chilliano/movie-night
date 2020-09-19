@@ -34,7 +34,6 @@ export class GridComponent implements OnInit {
 
   ngOnInit() {
     this.breakpoint = setColumns(window);
-    this.isHandset$.subscribe((isHandset) => console.log(isHandset));
   }
 
   ngAfterContentInit() {}

@@ -2,7 +2,7 @@ import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import { lazySizes } from 'lazysizes';
 // quick and dirty fix, add to tsconfig later
-declare var require: any;
+// declare var require: any;
 
 @Directive({
   selector: '[lazyload]',

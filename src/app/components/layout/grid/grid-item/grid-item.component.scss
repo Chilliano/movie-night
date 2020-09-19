@@ -17,6 +17,21 @@
         background-size: contain;
       }
       &--details {
+        margin: 12px;
+        display: grid;
+        justify-content: center;
+        .title {
+          font-size: 1.4rem;
+          text-align: center;
+        }
+        .sub-title {
+          max-height: 3em;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          opacity: 0.6;
+          font-size: 1rem;
+          text-align: center;
+        }
       }
     }
   }

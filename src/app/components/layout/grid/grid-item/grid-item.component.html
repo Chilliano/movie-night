@@ -2,16 +2,23 @@
   <div class="card">
     <div class="card--img" style="position: relative">
       <img
-        style="width: 100%; min-height: 100%; position: absolute"
+        style="
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: contain;
+        "
         alt=""
         lazyload="{{ item.img }}"
       />
     </div>
     <div class="card--details">
-      WHASODFIJASODFJASOIDF ipsuma sdofaijsd foasdijfoasijd foaisjd
-      foasijdofaisjd foaisdjf oasidjf aosidjf oasidjf oasidjfoasidj foaisjd
-      foaisjd foaisdjf
+      <div class="sub-title">
+        {{ item.length }}
+        &middot;
+        {{ item.rate }}
+      </div>
+      <app-button [config]="{ text: 'View Details' }"></app-button>
     </div>
-    <app-button [config]="{ text: 'View Details' }"></app-button>
   </div>
 </div>
