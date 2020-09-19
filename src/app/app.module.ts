@@ -17,6 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from '@components/layout/header/header.component';
 import { FooterComponent } from '@components/layout/footer/footer.component';
 import { MoviesComponent } from '@components/movies/movies.component';
+import { GridItemComponent } from './components/layout/grid/grid-item/grid-item.component';
+import { ButtonComponent } from './components/shared/button/button.component';
+import { GridComponent } from '@components/layout/grid/grid.component';
+// pipes
 import { FilterOnSearchTermPipe } from './pipes/filter-on-search-term.pipe';
 // services
 import { MoviesService } from 'app/services/movies.service';
@@ -28,6 +32,9 @@ import { MoviesService } from 'app/services/movies.service';
     FooterComponent,
     MoviesComponent,
     FilterOnSearchTermPipe,
+    GridComponent,
+    GridItemComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

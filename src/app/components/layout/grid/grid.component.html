@@ -1,0 +1,16 @@
+<mat-grid-list
+  [cols]="breakpoint"
+  (window:resize)="onResize($event)"
+  ratio="4:2"
+  gutterSize="10"
+  [@cardAnimation]="data.length"
+>
+  <mat-grid-tile
+    *ngFor="
+      let item of data | filterOnSearchTerm: localSearchTermRef;
+      index as i
+    "
+  >
+    <app-grid-item [item]="item"></app-grid-item>></mat-grid-tile
+  ></mat-grid-list
+>

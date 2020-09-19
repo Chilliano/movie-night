@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MovieModel } from '@models/movie.model';
+import { MovieModel } from 'app/models/movie.model';
 import { MoviesService } from 'app/services/movies.service';
+
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -9,10 +10,9 @@ import { MoviesService } from 'app/services/movies.service';
 })
 export class MoviesComponent implements OnInit {
   movies$: Observable<MovieModel[]>;
-  moviesError: Error = null;
   searchTerm$: Observable<string>;
   localSearchTermRef = '';
-
+  rowHeight = '2:1';
   constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {

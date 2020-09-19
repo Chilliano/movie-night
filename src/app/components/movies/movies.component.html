@@ -5,15 +5,9 @@
   [(ngModel)]="localSearchTermRef"
 />
 
-<div *ngIf="moviesError?.message">
-  <div class="alert alert-danger" role="alert">
-    Some error occurred. Please try again
-  </div>
+<div class="movies--container">
+  <app-grid
+    [data]="movies$ | async"
+    [localSearchTermRef]="localSearchTermRef"
+  ></app-grid>
 </div>
-<li
-  *ngFor="let movie of movies$ | async | filterOnSearchTerm: localSearchTermRef"
->
-  <button mat-button color="primary">
-    {{ movie ? movie.name : "Testing" }}
-  </button>
-</li>

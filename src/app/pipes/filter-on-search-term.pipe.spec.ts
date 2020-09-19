@@ -1,4 +1,4 @@
-import { MovieModel } from './../modules/core/store/models/movie.model';
+import { MovieModel } from '../models/movie.model';
 import { FilterOnSearchTermPipe } from './filter-on-search-term.pipe';
 
 describe('PhonenumberPipe', () => {

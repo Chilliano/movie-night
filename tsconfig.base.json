@@ -16,13 +16,14 @@
     "paths": {
       "@store/*": ["app/modules/core/store/*"],
       "@assets/*": ["assets/*"],
-      "@models/*": ["app/modules/core/store/models/*"],
+      "@models/*": ["app/models/*"],
       "@actions/*": ["app/modules/core/store/actions/*"],
       "@images/*": ["assets/images/*"],
       "@styles/*": ["assets/styles/*"],
       "@components/*": ["app/components/*"],
       "@services/*": ["app/services/*"],
-      "@functions/*": ["app/functions/*"]
+      "@functions/*": ["app/functions/*"],
+      "@animations/*": ["app/animations/*"]
     }
   }
 }
