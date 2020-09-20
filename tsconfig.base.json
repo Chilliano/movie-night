@@ -13,8 +13,6 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "baseUrl": "src",
-    "types": ["node"],
-    "typeRoots": ["node_modules/@types"],
     "paths": {
       "@store/*": ["app/modules/core/store/*"],
       "@assets/*": ["assets/*"],
