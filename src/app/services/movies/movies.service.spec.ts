@@ -1,8 +1,7 @@
-import { initialState } from './../modules/core/store/appReducer';
+import { initialState } from '../../modules/core/store/appReducer';
 import { TestBed } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-
-import { MoviesService } from './movies.service';
+import { MoviesService } from '@services/movies/movies.service';
 
 describe('MoviesService', () => {
   let service: MoviesService;

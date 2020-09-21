@@ -1,1 +1,17 @@
-<h1>{{ title }} app is running!</h1>
+<div id="header">
+  <mat-toolbar color="secondary">
+    <div class="thick-top"></div>
+    <mat-toolbar-row>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <ul fxLayout fxLayoutGap="20px">
+          <li fxHide.xs>
+            <app-button
+              (clicked)="goHome()"
+              [config]="{ text: 'test', icon: 'home' }"
+            ></app-button>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

@@ -1,0 +1,14 @@
+@import "src/assets/styles/variables";
+
+#footer {
+  background: $primary;
+  height: 100%;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}

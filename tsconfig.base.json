@@ -20,6 +20,7 @@
       "@actions/*": ["app/modules/core/store/actions/*"],
       "@images/*": ["assets/images/*"],
       "@styles/*": ["assets/styles/*"],
+      "@variables/*": ["assets/variables/*"],
       "@components/*": ["app/components/*"],
       "@services/*": ["app/services/*"],
       "@functions/*": ["app/functions/*"],

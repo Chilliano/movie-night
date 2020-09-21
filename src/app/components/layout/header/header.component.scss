@@ -1,0 +1,19 @@
+@import "src/assets/styles/variables";
+
+#header {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background: #cccccc;
+  display: grid;
+  align-items: center;
+  position: relative;
+
+  .thick-top {
+    background-color: $primary;
+    height: 20%;
+    position: absolute;
+    width: 100%;
+  }
+}

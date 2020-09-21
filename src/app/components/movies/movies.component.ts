@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { MovieModel } from 'app/models/movie.model';
-import { MoviesService } from 'app/services/movies.service';
+import { MoviesService } from 'app/services/movies/movies.service';
 
 @Component({
   selector: 'app-movies',
@@ -17,11 +17,21 @@ export class MoviesComponent implements OnInit {
   constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {
-    this.movies$ = this.movieService.getAllMovies();
+    this.resetList();
     this.searchTerm$ = this.movieService.getSearchTerm();
   }
 
+  resetList(): void {
+    this.movies$ = this.movieService.getAllMovies();
+  }
+
   updateSearchTerm(e) {
-    this.movieService.updateSearchTerm(e.target.value);
+    if (!e.target.value) {
+      console.log('inside reset');
+      this.resetList();
+      this.movieService.updateSearchTerm('');
+    } else {
+      this.movieService.updateSearchTerm(e.target.value);
+    }
   }
 }

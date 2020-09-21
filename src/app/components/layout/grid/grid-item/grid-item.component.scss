@@ -9,12 +9,17 @@
       height: 100%;
       display: grid;
       grid-template-rows: 66% 1fr;
+      padding: 5px 10px;
       &--img {
-        width: 100%;
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
       }
       &--details {
         margin: 12px;

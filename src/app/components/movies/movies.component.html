@@ -1,25 +1,35 @@
 <div class="container--search-input">
-  Search Input
-
-  <input
-    type="text"
-    (input)="updateSearchTerm($event)"
-    [(ngModel)]="localSearchTermRef"
-  />
-  <span *ngIf="localSearchTermRef.length"
-    ><button mat-button (click)="hideList = !hideList">
-      {{ hideList ? "Display List" : "Hide List" }}
-    </button></span
-  >
+  <form class="example-form">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Filter Movies</mat-label>
+      <input
+        (keyup)="updateSearchTerm($event)"
+        matInput
+        placeholder="Search..."
+        [value]="searchTerm$ | async"
+      />
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+    <span
+      ><app-button
+        *ngIf="(searchTerm$ | async).length"
+        (clicked)="hideList = !hideList"
+        [config]="{ text: hideList ? 'Un-hide list' : 'Hide list' }"
+      >
+      </app-button
+    ></span>
+  </form>
 
   <div
     class="movies-list"
-    [ngClass]="{ hide: !localSearchTermRef.length || hideList }"
+    [ngClass]="{ hide: hideList || !(searchTerm$ | async).length }"
   >
     <ul>
       <li
         *ngFor="
-          let movie of movies$ | async | filterOnSearchTerm: localSearchTermRef
+          let movie of movies$
+            | async
+            | filterOnSearchTerm: (searchTerm$ | async)
         "
       >
         {{ movie.name }}
@@ -31,6 +41,6 @@
 <div class="movies--container">
   <app-grid
     [data]="movies$ | async"
-    [localSearchTermRef]="localSearchTermRef"
+    [localSearchTermRef]="searchTerm$ | async"
   ></app-grid>
 </div>

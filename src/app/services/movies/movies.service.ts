@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { MovieModel } from '@models/movie.model';
 import { Store } from '@ngrx/store';
+import { RouterService } from '@services/router/router.service';
 import {
   updateSearchTerm,
   updateSelectedMovie,
@@ -14,7 +14,7 @@ import AppState from '@store/app.state';
 export class MoviesService {
   constructor(
     private store: Store<{ app: AppState }>,
-    private router: Router
+    private routerService: RouterService
   ) {}
 
   getSearchTerm() {
@@ -26,15 +26,13 @@ export class MoviesService {
   }
 
   updateSearchTerm(value) {
-    if (value) {
-      this.store.dispatch(updateSearchTerm({ searchTerm: value }));
-    }
+    this.store.dispatch(updateSearchTerm({ searchTerm: value }));
   }
 
   selectMovie(selectedMovie: MovieModel) {
     if (selectedMovie) {
       this.store.dispatch(updateSelectedMovie({ selectedMovie }));
-      this.router.navigate(['/movies', `${selectedMovie.id}`]);
+      this.routerService.goToMoviesDetailsPage(selectedMovie.id);
     }
   }
 
@@ -44,12 +42,8 @@ export class MoviesService {
       if (match[0] !== undefined) {
         return match[0];
       } else {
-        this.goHome();
+        this.routerService.goHome();
       }
     });
-  }
-
-  goHome() {
-    this.router.navigate(['/movies']);
   }
 }

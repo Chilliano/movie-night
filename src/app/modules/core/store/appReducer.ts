@@ -8,10 +8,18 @@ export const _appReducer = createReducer(
   initialState,
   on(MovieActions.getAllMovies, (state) => state),
   on(MovieActions.updateSearchTerm, (state, { searchTerm }) => {
-    return {
-      ...state,
-      searchTerm: searchTerm,
-    };
+    if (!searchTerm.length) {
+      return {
+        ...state,
+        searchTerm: '',
+        movies: initialState.movies,
+      };
+    } else {
+      return {
+        ...state,
+        searchTerm: searchTerm,
+      };
+    }
   }),
   on(MovieActions.updateSelectedMovie, (state, { selectedMovie }) => {
     return {

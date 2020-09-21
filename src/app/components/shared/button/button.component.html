@@ -1,3 +1,18 @@
-<button mat-button (click)="this.onClick($event)">
+<button
+  *ngIf="!config?.icon; else iconButton"
+  mat-button
+  (click)="this.onClick($event)"
+>
   {{ config?.text || "Button" }}
 </button>
+
+<ng-template #iconButton>
+  <button
+    (click)="this.onClick($event)"
+    mat-icon-button
+    color="primary"
+    aria-label="Example icon button with a home icon"
+  >
+    <mat-icon>home</mat-icon>
+  </button>
+</ng-template>

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TrimStringExtensionFunction } from '@functions/trim-string-extension.function';
-import { MoviesService } from '@services/movies.service';
+import { MoviesService } from '@services/movies/movies.service';
 import { MovieModel } from '@models/movie.model';
 
 @Component({

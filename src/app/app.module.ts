@@ -1,4 +1,3 @@
-import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -21,10 +20,12 @@ import { MoviesComponent } from '@components/movies/movies.component';
 import { GridItemComponent } from '@components/layout/grid/grid-item/grid-item.component';
 import { ButtonComponent } from '@components/shared/button/button.component';
 import { GridComponent } from '@components/layout/grid/grid.component';
+import { MovieDetailsComponent } from '@components/movies/movie-details/movie-details.component';
+
 // pipes
 import { FilterOnSearchTermPipe } from 'app/pipes/filter-on-search-term.pipe';
 // services
-import { MoviesService } from '@services/movies.service';
+import { MoviesService } from '@services/movies/movies.service';
 // directives
 import { LazySizesDirective } from 'app/directives/lazySizes.directive';
 

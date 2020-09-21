@@ -4,22 +4,8 @@
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-rows: $header-height 1fr $footer-height;
+  grid-template-rows: auto 1fr $footer-height;
 
-  #header {
-    height: 100%;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    background: #cccccc;
-  }
-  #footer {
-    height: 100%;
-    width: 100%;
-    bottom: 0px;
-    left: 0px;
-    background: #cccccc;
-  }
   #content {
     height: 100%;
     overflow: auto;
