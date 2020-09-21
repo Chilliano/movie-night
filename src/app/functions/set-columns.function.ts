@@ -7,13 +7,13 @@ export const setColumns = (screen): number => {
       : screen.innerWidth <= 768
       ? 'tab'
       : 'desktop';
-  let columnCount = 2;
+  let columnCount = 1;
   switch (type) {
     case 'mobile':
-      columnCount = 2;
+      columnCount = 1;
       break;
     case 'tab':
-      columnCount = 3;
+      columnCount = 2;
       break;
     case 'desktop':
       columnCount = 4;

@@ -26,11 +26,22 @@ export class MoviesService {
   }
 
   updateSearchTerm(value) {
-    this.store.dispatch(updateSearchTerm({ searchTerm: value }));
+    if (value) {
+      this.store.dispatch(updateSearchTerm({ searchTerm: value }));
+    }
   }
 
   selectMovie(selectedMovie: MovieModel) {
-    this.store.dispatch(updateSelectedMovie({ selectedMovie }));
-    this.router.navigate(['/movies', `${selectedMovie.id}`]);
+    if (selectedMovie) {
+      this.store.dispatch(updateSelectedMovie({ selectedMovie }));
+      this.router.navigate(['/movies', `${selectedMovie.id}`]);
+    }
+  }
+
+  getSelectedMovie(id: number) {
+    return this.store.select((state) => {
+      const match = state.app.movies.filter((movie) => movie.id === id);
+      return match[0];
+    });
   }
 }
