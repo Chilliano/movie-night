@@ -13,6 +13,7 @@ export class MoviesComponent implements OnInit {
   searchTerm$: Observable<string>;
   localSearchTermRef = '';
   rowHeight = '2:1';
+  hideList = false;
   constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {

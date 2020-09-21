@@ -1,9 +1,32 @@
-<p>movies works!</p>
-<input
-  type="text"
-  (input)="updateSearchTerm($event)"
-  [(ngModel)]="localSearchTermRef"
-/>
+<div class="container--search-input">
+  Search Input
+
+  <input
+    type="text"
+    (input)="updateSearchTerm($event)"
+    [(ngModel)]="localSearchTermRef"
+  />
+  <span *ngIf="localSearchTermRef.length"
+    ><button mat-button (click)="hideList = !hideList">
+      {{ hideList ? "Display List" : "Hide List" }}
+    </button></span
+  >
+
+  <div
+    class="movies-list"
+    [ngClass]="{ hide: !localSearchTermRef.length || hideList }"
+  >
+    <ul>
+      <li
+        *ngFor="
+          let movie of movies$ | async | filterOnSearchTerm: localSearchTermRef
+        "
+      >
+        {{ movie.name }}
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="movies--container">
   <app-grid
