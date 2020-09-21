@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TrimStringExtensionFunction } from '@functions/trim-string-extension.function';
+import { MoviesService } from '@services/movies.service';
+import { MovieModel } from '@models/movie.model';
 
 @Component({
   selector: 'app-grid-item',
@@ -8,12 +10,17 @@ import { TrimStringExtensionFunction } from '@functions/trim-string-extension.fu
 })
 export class GridItemComponent implements OnInit {
   @Input() item;
+  @Output() selectedItem = new EventEmitter<MovieModel>();
 
-  constructor() {}
+  constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {}
 
   getAlt(s) {
     return TrimStringExtensionFunction(s);
+  }
+
+  onItemSelected(item) {
+    this.moviesService.selectMovie(item);
   }
 }

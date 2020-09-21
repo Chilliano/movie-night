@@ -1,3 +1,4 @@
+import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -33,6 +34,7 @@ import { LazySizesDirective } from 'app/directives/lazySizes.directive';
     HeaderComponent,
     FooterComponent,
     MoviesComponent,
+    MovieDetailsComponent,
     GridComponent,
     GridItemComponent,
     ButtonComponent,

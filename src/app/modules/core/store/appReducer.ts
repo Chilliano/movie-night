@@ -13,5 +13,11 @@ export const _appReducer = createReducer(
       searchTerm: searchTerm,
     };
   }),
+  on(MovieActions.updateSelectedMovie, (state, { selectedMovie }) => {
+    return {
+      ...state,
+      selectedMovie,
+    };
+  }),
   on(MovieActions.reset, () => initialState)
 );

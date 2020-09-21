@@ -18,7 +18,10 @@
         &middot;
         {{ item.rate }}
       </div>
-      <app-button [config]="{ text: 'View Details' }"></app-button>
+      <app-button
+        (clicked)="onItemSelected(item)"
+        [config]="{ text: 'View Details' }"
+      ></app-button>
     </div>
   </div>
 </div>

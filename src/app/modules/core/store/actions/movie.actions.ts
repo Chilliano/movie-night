@@ -1,3 +1,4 @@
+import { MovieModel } from '@models/movie.model';
 import { createAction, props } from '@ngrx/store';
 
 export const setAllMovies = createAction('[Movies] Set Movies');
@@ -11,5 +12,9 @@ export const getMoviesFail = createAction('[Movies] Get Movies FAIL');
 export const updateSearchTerm = createAction(
   '[Movies] Update Search Term',
   props<{ searchTerm: string }>()
+);
+export const updateSelectedMovie = createAction(
+  '[Movies] Update Movie Selected',
+  props<{ selectedMovie: MovieModel }>()
 );
 export const reset = createAction('[Movies] Reset');
