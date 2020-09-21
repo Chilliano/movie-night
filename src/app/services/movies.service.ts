@@ -41,7 +41,15 @@ export class MoviesService {
   getSelectedMovie(id: number) {
     return this.store.select((state) => {
       const match = state.app.movies.filter((movie) => movie.id === id);
-      return match[0];
+      if (match[0] !== undefined) {
+        return match[0];
+      } else {
+        this.goHome();
+      }
     });
+  }
+
+  goHome() {
+    this.router.navigate(['/movies']);
   }
 }
