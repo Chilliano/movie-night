@@ -1,7 +1,6 @@
 @import "src/assets/styles/variables";
 :host {
   .mat-grid-tile {
-    box-shadow: $box-shadow;
     transition: $general-transition;
     &:hover {
       box-shadow: $box-shadow-hover;

@@ -1,18 +1,3 @@
-<div class="card-container">
-  <div class="card">
-    <div class="card--img" style="position: relative">
-      <img alt="" lazyload="{{ item.img }}" />
-    </div>
-    <div class="card--details">
-      <div class="sub-title">
-        {{ item.length }}
-        &middot;
-        {{ item.rate }}
-      </div>
-      <app-button
-        (clicked)="onItemSelected(item)"
-        [config]="{ text: 'View Details' }"
-      ></app-button>
-    </div>
-  </div>
+<div class="card-container" (click)="onItemSelected()">
+  <img alt="" lazyload="{{ item.img }}" />
 </div>

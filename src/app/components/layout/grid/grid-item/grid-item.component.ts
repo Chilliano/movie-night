@@ -20,7 +20,7 @@ export class GridItemComponent implements OnInit {
     return TrimStringExtensionFunction(s);
   }
 
-  onItemSelected(item) {
-    this.moviesService.selectMovie(item);
+  onItemSelected() {
+    this.moviesService.selectMovie(this.item);
   }
 }
