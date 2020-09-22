@@ -34,4 +34,8 @@ export class MoviesComponent implements OnInit {
       this.movieService.updateSearchTerm(e.target.value);
     }
   }
+
+  selectMovie(movie) {
+    this.movieService.selectMovie(movie);
+  }
 }

@@ -1,3 +1,4 @@
+import { SearchInputComponent } from '@components/shared/search-input/search-input.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -39,6 +40,8 @@ import { LazySizesDirective } from 'app/directives/lazySizes.directive';
     GridComponent,
     GridItemComponent,
     ButtonComponent,
+    SearchInputComponent,
+    HeaderComponent,
     // pipes
     FilterOnSearchTermPipe,
     // directives

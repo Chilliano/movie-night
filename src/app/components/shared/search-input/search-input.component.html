@@ -10,30 +10,5 @@
       />
       <mat-icon matPrefix>search</mat-icon>
     </mat-form-field>
-    <span
-      ><app-button
-        *ngIf="(searchTerm$ | async).length"
-        (clicked)="hideList = !hideList"
-        [config]="{ text: hideList ? 'Un-hide list' : 'Hide list' }"
-      >
-      </app-button
-    ></span>
   </form>
-
-  <div
-    class="movies-list"
-    [ngClass]="{ hide: hideList || !(searchTerm$ | async).length }"
-  >
-    <ul>
-      <li
-        *ngFor="
-          let movie of movies$
-            | async
-            | filterOnSearchTerm: (searchTerm$ | async)
-        "
-      >
-        {{ movie.name }}
-      </li>
-    </ul>
-  </div>
 </div>
