@@ -1,3 +1,10 @@
 <div>
   Showing product details for product: {{ (selectedMovie$ | async)?.name }}
+  <img
+    src="{{
+      '../../../../../../assets/images/movie-covers/' +
+        (selectedMovie$ | async)?.img
+    }}"
+    alt=""
+  />
 </div>
