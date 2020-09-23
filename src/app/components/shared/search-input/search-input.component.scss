@@ -1,0 +1,12 @@
+:host {
+  .container--search-input {
+    form.filter {
+      .mat-form-field {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+      }
+    }
+  }
+}
