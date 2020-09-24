@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieModel } from 'app/models/movie.model';
 import { MoviesService } from 'app/services/movies/movies.service';
+import { filterByGenre } from '@functions/filter-by-genre.function';
 
 @Component({
   selector: 'app-movies',

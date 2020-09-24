@@ -1,3 +1,4 @@
+import { filterByGenre } from './../../../functions/filter-by-genre.function';
 import { initializeState } from '@store/app.state';
 import { createReducer, on } from '@ngrx/store';
 import * as MovieActions from '@store/actions/movie.actions';
@@ -6,15 +7,13 @@ export const initialState = initializeState();
 
 export const _appReducer = createReducer(
   initialState,
-  // retrieve all movies
   on(MovieActions.getAllMovies, (state) => state),
-
   on(MovieActions.updateFilterTerm, (state, { filterTerm }) => {
     if (!filterTerm.length) {
       return {
         ...state,
         filterTerm: '',
-        movies: initialState.movies,
+        movies: state.movies,
       };
     } else {
       return {
@@ -32,7 +31,11 @@ export const _appReducer = createReducer(
   on(MovieActions.updateGenresSelected, (state, { selectedGenres }) => {
     return {
       ...state,
+      movies: selectedGenres.length
+        ? filterByGenre(state.movies, selectedGenres)
+        : initialState.movies,
       selectedGenres,
+      filterTerm: '',
     };
   }),
   on(MovieActions.reset, () => initialState)

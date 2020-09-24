@@ -1,25 +1,24 @@
 import { MovieModel } from '@models/movie.model';
 import { createAction, props } from '@ngrx/store';
+import * as movieTypes from '../movie.types';
 
-export const setAllMovies = createAction('[Movies] Set Movies');
-export const getAllMovies = createAction('[Movies] Get Movies');
+// actions
+export const setAllMovies = createAction(movieTypes.SET_MOVIES);
+export const getAllMovies = createAction(movieTypes.GET_MOVIES);
 export const getOneMovie = createAction(
-  '[Movies] Get ONE Movie',
+  movieTypes.GET_ONE_MOVIE,
   props<{ id: Number }>()
 );
-export const getMoviesSuccess = createAction('[Movies] Get Movies SUCCESS');
-export const getMoviesFail = createAction('[Movies] Get Movies FAIL');
 export const updateFilterTerm = createAction(
-  '[Movies] Update Filter Term',
+  movieTypes.UPDATE_FILTER_TERM,
   props<{ filterTerm: string }>()
 );
 export const updateSelectedMovie = createAction(
-  '[Movies] Update Movie Selected',
+  movieTypes.UPDATE_SELECTED_MOVIE,
   props<{ selectedMovie: MovieModel }>()
 );
-
 export const updateGenresSelected = createAction(
-  '[Movies] Update Genres Selected',
+  movieTypes.UPDATE_SELECTED_GENRES,
   props<{ selectedGenres: string[] }>()
 );
-export const reset = createAction('[Movies] Reset');
+export const reset = createAction(movieTypes.RESET_MOVIES);

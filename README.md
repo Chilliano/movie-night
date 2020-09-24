@@ -18,6 +18,7 @@
 - indicator that the list is currently being filtered
 - indicate which area filter term was found - Description, title etc...
 - reset search term on home nav?
+- add check to see if search terms are different than already in state. if not, dont perform action
   ** Ideas **
 
 - for favouriting specific movies, need snackbar to confirm add and remove. need to add to redux
