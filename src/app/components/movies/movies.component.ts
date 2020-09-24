@@ -35,6 +35,12 @@ export class MoviesComponent implements OnInit {
     }
   }
 
+  onListItemSelect(item: MovieModel) {
+    if (item) {
+      this.selectMovie(item);
+    }
+  }
+
   selectMovie(movie) {
     this.movieService.selectMovie(movie);
   }

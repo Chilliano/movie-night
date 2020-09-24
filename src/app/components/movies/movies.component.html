@@ -3,27 +3,17 @@
   <app-button
     *ngIf="(searchTerm$ | async).length"
     (clicked)="hideList = !hideList"
-    [config]="{ text: hideList ? 'Un-hide list' : 'Hide list' }"
+    [config]="{ text: hideList ? 'Un-hide list' : 'Hide list', color: 'white' }"
   >
   </app-button>
-  <div
-    class="list"
-    [ngClass]="{ hide: hideList || !(searchTerm$ | async).length }"
-  >
-    <ul>
-      <li
-        class="movies-list--item"
-        *ngFor="
-          let movie of movies$
-            | async
-            | filterOnSearchTerm: (searchTerm$ | async)
-        "
-        (click)="selectMovie(movie)"
-      >
-        {{ movie.name }}
-      </li>
-    </ul>
-  </div>
+  <app-list
+    [config]="{
+      data: movies$ | async,
+      hide: !(searchTerm$ | async).length || hideList,
+      filterTerm: searchTerm$ | async
+    }"
+    (clicked)="onListItemSelect($event)"
+  ></app-list>
 </div>
 
 <div class="movies--container">

@@ -23,6 +23,7 @@ import { ButtonComponent } from '@components/shared/button/button.component';
 import { GridComponent } from '@components/layout/grid/grid.component';
 import { MovieDetailsComponent } from '@components/movies/movie-details/movie-details.component';
 import { GenresComponent } from '@components/shared/genres/genres.component';
+import { ListComponent } from '@components/shared/list/list.component';
 // pipes
 import { FilterOnSearchTermPipe } from 'app/pipes/filter-on-search-term.pipe';
 // services
@@ -43,6 +44,7 @@ import { LazySizesDirective } from 'app/directives/lazySizes.directive';
     SearchInputComponent,
     HeaderComponent,
     GenresComponent,
+    ListComponent,
     // pipes
     FilterOnSearchTermPipe,
     // directives

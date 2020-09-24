@@ -7,13 +7,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent implements OnInit {
-  @Output() clicked: EventEmitter<Event> = new EventEmitter();
+  @Output() clicked: EventEmitter<boolean> = new EventEmitter();
   @Input() config: ButtonConfigModel;
 
   constructor() {}
 
   ngOnInit() {}
-  onClick(event: Event) {
+  onClick(event: boolean) {
     this.clicked.emit(event);
   }
 }
