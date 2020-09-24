@@ -13,7 +13,14 @@ export class HeaderComponent {
   constructor(private routerService: RouterService) {}
 
   goHome(): void {
-    console.log('clicked');
     this.routerService.goHome();
+  }
+
+  getRouteUrl(): string {
+    console.log(
+      'HeaderComponent -> getRouteUrl -> this.routerService.getRouter();',
+      this.routerService.getRouter()
+    );
+    return this.routerService.getRouter();
   }
 }

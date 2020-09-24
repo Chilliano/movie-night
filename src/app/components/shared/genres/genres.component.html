@@ -3,7 +3,8 @@
     [config]="{
       text: 'Genre',
       icon: 'filter_list',
-      backgroundColor: color.$secondary
+      backgroundColor: color.$secondary,
+      disabled: getRouteUrl() !== '/movies'
     }"
     (clicked)="toggleList()"
   ></app-button>
@@ -11,7 +12,10 @@
   <div class="list" [ngClass]="{ hide: !displayList }">
     <app-button
       (clicked)="onFilterByGenre(genresList.selectedOptions.selected)"
-      [config]="{ text: 'Filter By Genre', color: 'white' }"
+      [config]="{
+        text: 'Filter By Genre',
+        color: 'white'
+      }"
     ></app-button>
     <app-button
       (clicked)="genresList.deselectAll(); onFilterByGenre([])"

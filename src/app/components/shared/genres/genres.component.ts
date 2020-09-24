@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Color } from '@assets/styles/_color';
 import { MoviesService } from '@services/movies/movies.service';
+import { RouterService } from '@services/router/router.service';
 
 @Component({
   selector: 'app-genres',
@@ -23,7 +24,10 @@ export class GenresComponent implements OnInit {
     'sport',
   ];
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(
+    private moviesService: MoviesService,
+    private routerService: RouterService
+  ) {}
 
   ngOnInit() {}
 
@@ -36,5 +40,13 @@ export class GenresComponent implements OnInit {
   toggleList() {
     this.displayList = !this.displayList;
     this.moviesService.resetSearch();
+  }
+
+  getRouteUrl(): string {
+    console.log(
+      'HeaderComponent -> getRouteUrl -> this.routerService.getRouter();',
+      this.routerService.getRouter()
+    );
+    return this.routerService.getRouter();
   }
 }

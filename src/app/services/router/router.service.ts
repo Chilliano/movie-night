@@ -12,10 +12,6 @@ export class RouterService {
   }
 
   getRouter(): string {
-    console.log(
-      'RouterService -> getRouter -> this.router.url',
-      this.router.url
-    );
     return this.router.url;
   }
 

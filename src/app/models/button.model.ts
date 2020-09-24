@@ -3,4 +3,5 @@ export interface ButtonConfigModel {
   icon: string;
   color: string;
   backgroundColor: string;
+  disabled: boolean;
 }

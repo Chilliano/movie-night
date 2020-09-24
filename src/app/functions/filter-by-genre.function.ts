@@ -2,8 +2,6 @@ import { MovieModel } from './../models/movie.model';
 
 export const filterByGenre = (list: MovieModel[], genres: string[]) => {
   if (list.length && genres.length) {
-    console.log('filterByGenre -> genres', genres);
-    console.log('filterByGenre -> list', list);
     const included = [];
     list.forEach((item) => {
       genres.forEach((genre) => {
@@ -11,7 +9,6 @@ export const filterByGenre = (list: MovieModel[], genres: string[]) => {
           included.push(item);
         }
       });
-      console.log('filterByGenre -> included', included);
     });
     return included;
   } else {

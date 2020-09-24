@@ -6,7 +6,9 @@ export default class AppState {
     public filterTerm: string,
     public movies: MovieModel[],
     public selectedMovie: MovieModel,
-    public selectedGenres: string[]
+    public selectedGenres: string[],
+    public listDisplayGenres: boolean,
+    public listDisplayFilterTerm: boolean
   ) {}
 }
 
@@ -16,5 +18,7 @@ export const initializeState = (): AppState => {
     movies: [...MoviesData],
     selectedMovie: null,
     selectedGenres: [],
+    listDisplayGenres: false,
+    listDisplayFilterTerm: false,
   };
 };
