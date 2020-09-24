@@ -3,7 +3,7 @@ import { MovieModel } from 'app/models/movie.model';
 
 export default class AppState {
   constructor(
-    public searchTerm: string,
+    public filterTerm: string,
     public movies: MovieModel[],
     public selectedMovie: MovieModel,
     public selectedGenres: string[]
@@ -12,7 +12,7 @@ export default class AppState {
 
 export const initializeState = (): AppState => {
   return {
-    searchTerm: '',
+    filterTerm: '',
     movies: [...MoviesData],
     selectedMovie: null,
     selectedGenres: [],

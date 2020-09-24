@@ -17,7 +17,7 @@ import { map, tap } from 'rxjs/operators';
 })
 export class GridComponent implements OnInit {
   @Input() data;
-  @Input() localSearchTermRef;
+  @Input() localFilterTermRef;
   breakpoint: number;
 
   isHandset$: Observable<boolean> = this.breakpointObserver

@@ -10,21 +10,21 @@ import { Observable } from 'rxjs';
 })
 export class SearchInputComponent implements OnInit {
   movies$: Observable<MovieModel[]>;
-  searchTerm$: Observable<string>;
+  filterTerm$: Observable<string>;
   hideList = false;
 
   constructor(private movieService: MoviesService) {}
 
   ngOnInit() {
-    this.searchTerm$ = this.movieService.getSearchTerm();
+    this.filterTerm$ = this.movieService.getFilterTerm();
     this.movies$ = this.movieService.getAllMovies();
   }
 
-  updateSearchTerm(e) {
+  updateFilterTerm(e) {
     if (!e.target.value) {
-      this.movieService.updateSearchTerm('');
+      this.movieService.updateFilterTerm('');
     } else {
-      this.movieService.updateSearchTerm(e.target.value);
+      this.movieService.updateFilterTerm(e.target.value);
     }
   }
 

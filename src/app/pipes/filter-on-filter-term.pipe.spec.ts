@@ -1,13 +1,13 @@
 import { MovieModel } from '../models/movie.model';
-import { FilterOnSearchTermPipe } from './filter-on-search-term.pipe';
+import { FilterOnFilterTermPipe } from './filter-on-filter-term.pipe';
 
 describe('PhonenumberPipe', () => {
-  let pipe: FilterOnSearchTermPipe;
+  let pipe: FilterOnFilterTermPipe;
   let arrayList: MovieModel[];
   let searchString: string;
 
   beforeEach(() => {
-    pipe = new FilterOnSearchTermPipe();
+    pipe = new FilterOnFilterTermPipe();
     searchString = 'ROYALE';
     arrayList = [
       {
@@ -40,7 +40,7 @@ describe('PhonenumberPipe', () => {
   });
 
   it('should filter out any object without the searchString found in name,description or genres', () => {
-    const pipe = new FilterOnSearchTermPipe();
+    const pipe = new FilterOnFilterTermPipe();
     const result = pipe.transform(arrayList, searchString);
 
     expect(result).toEqual([

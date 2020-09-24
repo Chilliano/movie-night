@@ -3,10 +3,10 @@
     <mat-form-field>
       <mat-label>Filter Movies</mat-label>
       <input
-        (keyup)="updateSearchTerm($event)"
+        (keyup)="updateFilterTerm($event)"
         matInput
         placeholder="Search..."
-        [value]="searchTerm$ | async"
+        [value]="filterTerm$ | async"
       />
       <mat-icon matPrefix>search</mat-icon>
     </mat-form-field>

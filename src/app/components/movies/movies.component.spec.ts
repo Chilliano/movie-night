@@ -4,7 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MoviesComponent } from './movies.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MoviesData } from '@assets/movie.mock-data';
-import { FilterOnSearchTermPipe } from 'app/pipes/filter-on-search-term.pipe';
+import { FilterOnFilterTermPipe } from 'app/pipes/filter-on-filter-term.pipe';
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
@@ -12,14 +12,14 @@ describe('MoviesComponent', () => {
 
   beforeEach(async(() => {
     const initialState = {
-      searchTerm: '',
+      filterTerm: '',
       movies: [...MoviesData],
       selectedMovie: null,
       selectedGenres: [],
     };
 
     TestBed.configureTestingModule({
-      declarations: [MoviesComponent, FilterOnSearchTermPipe],
+      declarations: [MoviesComponent, FilterOnFilterTermPipe],
       providers: [provideMockStore({ initialState })],
       schemas: [NO_ERRORS_SCHEMA],
     });

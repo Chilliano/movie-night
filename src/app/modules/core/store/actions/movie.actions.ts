@@ -9,12 +9,17 @@ export const getOneMovie = createAction(
 );
 export const getMoviesSuccess = createAction('[Movies] Get Movies SUCCESS');
 export const getMoviesFail = createAction('[Movies] Get Movies FAIL');
-export const updateSearchTerm = createAction(
-  '[Movies] Update Search Term',
-  props<{ searchTerm: string }>()
+export const updateFilterTerm = createAction(
+  '[Movies] Update Filter Term',
+  props<{ filterTerm: string }>()
 );
 export const updateSelectedMovie = createAction(
   '[Movies] Update Movie Selected',
   props<{ selectedMovie: MovieModel }>()
+);
+
+export const updateGenresSelected = createAction(
+  '[Movies] Update Genres Selected',
+  props<{ selectedGenres: string[] }>()
 );
 export const reset = createAction('[Movies] Reset');

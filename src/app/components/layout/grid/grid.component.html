@@ -7,7 +7,7 @@
 >
   <mat-grid-tile
     *ngFor="
-      let item of data | filterOnSearchTerm: localSearchTermRef;
+      let item of data | filterOnFilterTerm: localFilterTermRef;
       index as i
     "
   >

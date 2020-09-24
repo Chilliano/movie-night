@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MovieModel } from 'app/models/movie.model';
 import { MoviesService } from 'app/services/movies/movies.service';
 
@@ -10,28 +10,29 @@ import { MoviesService } from 'app/services/movies/movies.service';
 })
 export class MoviesComponent implements OnInit {
   movies$: Observable<MovieModel[]>;
-  searchTerm$: Observable<string>;
-  localSearchTermRef = '';
+  selectedGenres$: Observable<string[]>;
+  filterTerm$: Observable<string>;
+  localFilterTermRef = '';
   rowHeight = '2:1';
   hideList = false;
   constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {
     this.resetList();
-    this.searchTerm$ = this.movieService.getSearchTerm();
+    this.filterTerm$ = this.movieService.getFilterTerm();
+    this.selectedGenres$ = this.movieService.getSelectedGenres();
   }
 
   resetList(): void {
     this.movies$ = this.movieService.getAllMovies();
   }
 
-  updateSearchTerm(e) {
+  updateFilterTerm(e) {
     if (!e.target.value) {
-      console.log('inside reset');
       this.resetList();
-      this.movieService.updateSearchTerm('');
+      this.movieService.updateFilterTerm('');
     } else {
-      this.movieService.updateSearchTerm(e.target.value);
+      this.movieService.updateFilterTerm(e.target.value);
     }
   }
 

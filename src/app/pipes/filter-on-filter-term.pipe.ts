@@ -3,11 +3,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { parseString } from '../functions/parse-string.function';
 
 @Pipe({
-  name: 'filterOnSearchTerm',
+  name: 'filterOnFilterTerm',
 })
-export class FilterOnSearchTermPipe implements PipeTransform {
-  transform(list: MovieModel[], searchTerm: string) {
-    return searchTerm.length
+export class FilterOnFilterTermPipe implements PipeTransform {
+  transform(list: MovieModel[], filterTerm: string) {
+    return filterTerm.length
       ? list.filter((item) => {
           const includedInItem = {
             isIncluded: function () {
@@ -17,12 +17,12 @@ export class FilterOnSearchTermPipe implements PipeTransform {
                 this.genres.map((genre) => parseString(genre)).join()
               );
 
-              let pSearchTerm = parseString(searchTerm);
+              let pFilterTerm = parseString(filterTerm);
 
               const res =
-                pName.includes(pSearchTerm) ||
-                pDescription.includes(pSearchTerm) ||
-                pGenres.includes(pSearchTerm);
+                pName.includes(pFilterTerm) ||
+                pDescription.includes(pFilterTerm) ||
+                pGenres.includes(pFilterTerm);
 
               return res ? true : false;
             },

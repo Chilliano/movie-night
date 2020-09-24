@@ -27,9 +27,10 @@ export class GenresComponent implements OnInit {
 
   ngOnInit() {}
 
-  onFilterByGenre(genre) {
+  onFilterByGenre(genres) {
+    const genreStrings = genres.map((genre) => genre.value);
     this.displayList = false;
-    this.moviesService.updateSearchTerm(genre);
+    this.moviesService.updateSelectedGenres(genreStrings);
   }
 
   toggleList() {

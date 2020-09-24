@@ -6,18 +6,20 @@ export const initialState = initializeState();
 
 export const _appReducer = createReducer(
   initialState,
+  // retrieve all movies
   on(MovieActions.getAllMovies, (state) => state),
-  on(MovieActions.updateSearchTerm, (state, { searchTerm }) => {
-    if (!searchTerm.length) {
+
+  on(MovieActions.updateFilterTerm, (state, { filterTerm }) => {
+    if (!filterTerm.length) {
       return {
         ...state,
-        searchTerm: '',
+        filterTerm: '',
         movies: initialState.movies,
       };
     } else {
       return {
         ...state,
-        searchTerm: searchTerm,
+        filterTerm: filterTerm,
       };
     }
   }),
@@ -25,6 +27,12 @@ export const _appReducer = createReducer(
     return {
       ...state,
       selectedMovie,
+    };
+  }),
+  on(MovieActions.updateGenresSelected, (state, { selectedGenres }) => {
+    return {
+      ...state,
+      selectedGenres,
     };
   }),
   on(MovieActions.reset, () => initialState)

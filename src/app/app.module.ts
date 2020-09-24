@@ -25,7 +25,7 @@ import { MovieDetailsComponent } from '@components/movies/movie-details/movie-de
 import { GenresComponent } from '@components/shared/genres/genres.component';
 import { ListComponent } from '@components/shared/list/list.component';
 // pipes
-import { FilterOnSearchTermPipe } from 'app/pipes/filter-on-search-term.pipe';
+import { FilterOnFilterTermPipe } from 'app/pipes/filter-on-filter-term.pipe';
 // services
 import { MoviesService } from '@services/movies/movies.service';
 // directives
@@ -46,7 +46,7 @@ import { LazySizesDirective } from 'app/directives/lazySizes.directive';
     GenresComponent,
     ListComponent,
     // pipes
-    FilterOnSearchTermPipe,
+    FilterOnFilterTermPipe,
     // directives
     LazySizesDirective,
   ],

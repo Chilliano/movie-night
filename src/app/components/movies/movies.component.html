@@ -1,7 +1,7 @@
 <div class="search-container">
   <app-search-input></app-search-input>
   <app-button
-    *ngIf="(searchTerm$ | async).length"
+    *ngIf="(filterTerm$ | async).length"
     (clicked)="hideList = !hideList"
     [config]="{ text: hideList ? 'Un-hide list' : 'Hide list', color: 'white' }"
   >
@@ -9,8 +9,8 @@
   <app-list
     [config]="{
       data: movies$ | async,
-      hide: !(searchTerm$ | async).length || hideList,
-      filterTerm: searchTerm$ | async
+      hide: !(filterTerm$ | async).length || hideList,
+      filterTerm: filterTerm$ | async
     }"
     (clicked)="onListItemSelect($event)"
   ></app-list>
@@ -19,6 +19,6 @@
 <div class="movies--container">
   <app-grid
     [data]="movies$ | async"
-    [localSearchTermRef]="searchTerm$ | async"
+    [localFilterTermRef]="filterTerm$ | async"
   ></app-grid>
 </div>

@@ -7,14 +7,20 @@
     }"
     (clicked)="toggleList()"
   ></app-button>
+
   <div class="list" [ngClass]="{ hide: !displayList }">
-    <ul>
-      <li *ngFor="let genre of genres">
-        <app-button
-          (clicked)="onFilterByGenre(genre)"
-          [config]="{ text: genre }"
-        ></app-button>
-      </li>
-    </ul>
+    <app-button
+      (clicked)="onFilterByGenre(genresList.selectedOptions.selected)"
+      [config]="{ text: 'Filter By Genre', color: 'white' }"
+    ></app-button>
+    <app-button
+      (clicked)="genresList.deselectAll(); onFilterByGenre([])"
+      [config]="{ text: 'Reset', color: 'white' }"
+    ></app-button>
+    <mat-selection-list #genresList>
+      <mat-list-option *ngFor="let genre of genres" [value]="genre">
+        {{ genre }}
+      </mat-list-option>
+    </mat-selection-list>
   </div>
 </div>

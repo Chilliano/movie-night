@@ -3,7 +3,8 @@ import { MovieModel } from '@models/movie.model';
 import { Store } from '@ngrx/store';
 import { RouterService } from '@services/router/router.service';
 import {
-  updateSearchTerm,
+  updateGenresSelected,
+  updateFilterTerm,
   updateSelectedMovie,
 } from '@store/actions/movie.actions';
 import AppState from '@store/app.state';
@@ -17,20 +18,24 @@ export class MoviesService {
     private routerService: RouterService
   ) {}
 
-  getSearchTerm() {
-    return this.store.select((state) => state.app.searchTerm);
+  getFilterTerm() {
+    return this.store.select((state) => state.app.filterTerm);
+  }
+
+  getSelectedGenres() {
+    return this.store.select((state) => state.app.selectedGenres);
   }
 
   getAllMovies() {
     return this.store.select((state) => state.app.movies);
   }
 
-  updateSearchTerm(value) {
-    this.store.dispatch(updateSearchTerm({ searchTerm: value }));
+  updateFilterTerm(value) {
+    this.store.dispatch(updateFilterTerm({ filterTerm: value }));
   }
 
   resetSearch() {
-    this.store.dispatch(updateSearchTerm({ searchTerm: '' }));
+    this.store.dispatch(updateFilterTerm({ filterTerm: '' }));
   }
 
   selectMovie(selectedMovie: MovieModel) {
@@ -49,5 +54,9 @@ export class MoviesService {
         this.routerService.goHome();
       }
     });
+  }
+
+  updateSelectedGenres(selectedGenres: string[]) {
+    return this.store.dispatch(updateGenresSelected({ selectedGenres }));
   }
 }
