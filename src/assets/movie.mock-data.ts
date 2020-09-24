@@ -114,7 +114,7 @@ export const MoviesData = [
     key: 'spectre',
     name: 'Spectre',
     description:
-      "A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.",
+      "A cryptic message from James Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.",
     genres: ['action', 'adventure', 'thriller'],
     rate: '6.9',
     length: '2hr 28mins',

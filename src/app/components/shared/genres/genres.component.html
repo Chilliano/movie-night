@@ -9,7 +9,7 @@
     (clicked)="toggleList()"
   ></app-button>
 
-  <div class="list" [ngClass]="{ hide: !displayList }">
+  <div class="list" [ngClass]="{ hide: !listDisplayGenres$ | async }">
     <app-button
       (clicked)="onFilterByGenre(genresList.selectedOptions.selected)"
       [config]="{

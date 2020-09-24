@@ -8,6 +8,8 @@ import {
   Output,
 } from '@angular/core';
 import { MovieModel } from '@models/movie.model';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -18,7 +20,12 @@ import { MovieModel } from '@models/movie.model';
 export class ListComponent implements OnInit {
   @Input() config: ListConfigModel;
   @Output() clicked: EventEmitter<MovieModel> = new EventEmitter();
-  constructor() {}
+  listDisplayGenre$: Observable<boolean>;
+  constructor(private store: Store) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.listDisplayGenre$ = this.store.select(
+      (state) => state.app.listDisplayGenre
+    );
+  }
 }
