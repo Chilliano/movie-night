@@ -1,6 +1,7 @@
 <button
   *ngIf="!config?.icon; else iconButton"
   mat-button
+  [ngStyle]="{ backgroundColor: config?.backgroundColor }"
   (click)="this.onClick($event)"
 >
   {{ config?.text || "Button" }}
@@ -9,10 +10,9 @@
 <ng-template #iconButton>
   <button
     (click)="this.onClick($event)"
+    [ngStyle]="{ backgroundColor: config?.backgroundColor }"
     mat-icon-button
-    color="primary"
-    aria-label="Example icon button with a home icon"
   >
-    <mat-icon>home</mat-icon>
+    <mat-icon>{{ config?.icon }}</mat-icon>
   </button>
 </ng-template>

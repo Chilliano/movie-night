@@ -1,4 +1,4 @@
-<div class="container">
+<div class="search-container">
   <app-search-input></app-search-input>
   <app-button
     *ngIf="(searchTerm$ | async).length"
@@ -7,7 +7,7 @@
   >
   </app-button>
   <div
-    class="movies-list"
+    class="list"
     [ngClass]="{ hide: hideList || !(searchTerm$ | async).length }"
   >
     <ul>

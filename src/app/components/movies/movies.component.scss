@@ -1,17 +1,9 @@
 @import "src/assets/styles/variables";
-
-.movies-list {
-  left: 0;
-  background: black;
-  color: white;
-  opacity: 0.5;
-  padding: 1rem;
-  border-radius: 5px;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  transition: $general-transition;
-  &.hide {
-    display: none;
-  }
+.search-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.list {
+  height: fit-content;
+  overflow: auto;
 }

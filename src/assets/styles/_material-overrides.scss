@@ -4,6 +4,7 @@
   color: $primary;
 }
 
-.mat-form-field-wrapper {
-  padding-bottom: 0;
+.mat-button {
+  border-top: 2px solid $secondary !important;
+  border-bottom: 2px solid $secondary !important;
 }

@@ -4,7 +4,7 @@
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr $footer-height;
+  grid-template-rows: auto 1fr;
 
   #content {
     height: 100%;

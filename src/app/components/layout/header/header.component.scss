@@ -1,19 +1,23 @@
 @import "src/assets/styles/variables";
 
-#header {
-  height: 100%;
-  width: 100%;
-  top: 0px;
-  left: 0px;
-  background: #cccccc;
-  display: grid;
-  align-items: center;
-  position: relative;
-
-  .thick-top {
-    background-color: $primary;
-    height: 20%;
-    position: absolute;
-    width: 100%;
+:host {
+  mat-toolbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: center;
+    justify-items: center;
+    .home-icon {
+      border-radius: 5px;
+    }
   }
+}
+
+.thick-top {
+  height: 5px;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+  background: $primary;
+  left: 0;
 }

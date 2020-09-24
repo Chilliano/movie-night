@@ -1,0 +1,20 @@
+<div class="genres">
+  <app-button
+    [config]="{
+      text: 'Genre',
+      icon: 'filter_list',
+      backgroundColor: color.$secondary
+    }"
+    (clicked)="toggleList()"
+  ></app-button>
+  <div class="list" [ngClass]="{ hide: !displayList }">
+    <ul>
+      <li *ngFor="let genre of genres">
+        <app-button
+          (clicked)="onFilterByGenre(genre)"
+          [config]="{ text: genre }"
+        ></app-button>
+      </li>
+    </ul>
+  </div>
+</div>

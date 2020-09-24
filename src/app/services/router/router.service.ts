@@ -11,6 +11,14 @@ export class RouterService {
     this.router.navigate(['/movies']);
   }
 
+  getRouter(): string {
+    console.log(
+      'RouterService -> getRouter -> this.router.url',
+      this.router.url
+    );
+    return this.router.url;
+  }
+
   goToMoviesDetailsPage(id): void {
     this.router.navigate(['/movies', `${id}`]);
   }

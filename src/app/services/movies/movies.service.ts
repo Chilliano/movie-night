@@ -29,6 +29,10 @@ export class MoviesService {
     this.store.dispatch(updateSearchTerm({ searchTerm: value }));
   }
 
+  resetSearch() {
+    this.store.dispatch(updateSearchTerm({ searchTerm: '' }));
+  }
+
   selectMovie(selectedMovie: MovieModel) {
     if (selectedMovie) {
       this.store.dispatch(updateSelectedMovie({ selectedMovie }));
