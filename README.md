@@ -1,7 +1,11 @@
 # Betsson
 
+```
+ `npm run start`
+```
+
 - for developing
-  `npm run start`
+
   - open browser included
 
 ## Build Steps
