@@ -110,7 +110,7 @@ export const MoviesData = [
     img: 'the-man-from-uncle.jpg',
   },
   {
-    id: 10,
+    id: 24,
     key: 'spectre',
     name: 'Spectre',
     description:
