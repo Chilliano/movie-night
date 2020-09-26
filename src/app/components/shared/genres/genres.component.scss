@@ -1,1 +1,12 @@
 @import "src/assets/styles/variables";
+:host {
+  .list {
+    top: $header-height;
+    bottom: unset !important;
+    .buttons {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 1rem;
+    }
+  }
+}

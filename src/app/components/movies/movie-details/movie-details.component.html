@@ -1,44 +1,101 @@
 <div class="outer-container">
-  <div class="block 1">
-    <div
-      class="side -main"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
-    <div
-      class="side -left"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
+  <div class="movie-poster">
+    <div class="block 1">
+      <div
+        class="side -main"
+        [ngStyle]="{
+          'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+        }"
+      ></div>
+      <div
+        class="side -left"
+        [ngStyle]="{
+          'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+        }"
+      ></div>
+    </div>
+    <div class="block 2">
+      <div
+        class="side -main"
+        [ngStyle]="{
+          'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+        }"
+      ></div>
+      <div
+        class="side -left"
+        [ngStyle]="{
+          'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+        }"
+      ></div>
+    </div>
+    <div class="block 3">
+      <div
+        class="side -main"
+        [ngStyle]="{
+          'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+        }"
+      ></div>
+      <div
+        class="side -left"
+        [ngStyle]="{
+          'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+        }"
+      ></div>
+    </div>
   </div>
-  <div class="block 2">
-    <div
-      class="side -main"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
-    <div
-      class="side -left"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
-  </div>
-  <div class="block 3">
-    <div
-      class="side -main"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
-    <div
-      class="side -left"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
+
+  <div class="details-container">
+    <div class="rating-and-length">
+      <div class="rating">
+        <p>
+          <mat-icon
+            *ngIf="(selectedMovie$ | async).rate * 10 > 70; else halfStar"
+            >star</mat-icon
+          >
+          <ng-template #halfStar>
+            <mat-icon>star_half</mat-icon>
+          </ng-template>
+        </p>
+        <p>{{ (selectedMovie$ | async).rate }}</p>
+      </div>
+      <div class="length">
+        <p>
+          <mat-icon> access_time </mat-icon>
+        </p>
+        <p class="length">
+          {{ (selectedMovie$ | async).length }}
+        </p>
+      </div>
+    </div>
+    <div class="progress-bar">
+      <mat-progress-bar
+        class="example-margin"
+        [color]="(selectedMovie$ | async).rate * 10 > 70 ? 'warn' : 'accent'"
+        [mode]="'determinate'"
+        [value]="progressValue"
+      >
+      </mat-progress-bar>
+    </div>
+
+    <div class="chips">
+      <mat-chip-list aria-label="Genres">
+        <mat-chip
+          [selectable]="false"
+          *ngFor="let genre of (selectedMovie$ | async).genres | slice: 0:2"
+          color="primary"
+          selected
+          >{{ genre }}</mat-chip
+        >
+      </mat-chip-list>
+    </div>
+
+    <div class="title-and-description">
+      <h2 style="font-family: 'Spartan'; font-weight: bold">
+        {{ (selectedMovie$ | async).name }}
+      </h2>
+      <h3 style="font-family: 'Spartan'">
+        {{ (selectedMovie$ | async).description }}
+      </h3>
+    </div>
   </div>
 </div>

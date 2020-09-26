@@ -4,6 +4,7 @@ import { MoviesService } from '@services/movies/movies.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { appearFromLeftAnimation } from '@animations/appear-from-left.animation';
+import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-details',
@@ -12,6 +13,7 @@ import { appearFromLeftAnimation } from '@animations/appear-from-left.animation'
   animations: [appearFromLeftAnimation],
 })
 export class MovieDetailsComponent implements OnInit {
+  progressValue = 0;
   items = [
     ` <div class="block">
   <div
@@ -56,7 +58,7 @@ export class MovieDetailsComponent implements OnInit {
 ></div>
 </div>`,
   ];
-  selectedMovie$: Observable<MovieModel> | void;
+  selectedMovie$: Observable<MovieModel>;
   id: number;
   private sub: any;
   constructor(
@@ -68,6 +70,15 @@ export class MovieDetailsComponent implements OnInit {
     this.sub = this.route.params.subscribe((params) => {
       const parsedId = (this.id = +params['id']);
       this.selectedMovie$ = this.movieService.getSelectedMovie(parsedId);
+      setTimeout(() => {
+        this.updateProgressValue();
+      }, 500);
+    });
+  }
+
+  updateProgressValue() {
+    this.selectedMovie$.subscribe((movie) => {
+      this.progressValue = parseInt(movie.rate) * 10;
     });
   }
 

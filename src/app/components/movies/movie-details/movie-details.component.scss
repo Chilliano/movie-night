@@ -15,108 +15,146 @@
     left: 64%;
   }
 }
-
 .outer-container {
-  max-height: 100vh;
-  margin: 0 auto;
-  width: fit-content;
-  position: relative;
-  width: 80%;
-  padding-top: 50%;
-  margin: 2rem auto;
+  height: 100%;
+  display: grid;
+  .movie-poster {
+    margin: 0 auto;
+    width: fit-content;
+    position: relative;
+    width: 80%;
+    padding-top: 50%;
+    margin: 2rem auto;
 
-  > .block {
-    position: absolute;
-    height: 100%;
-    width: 30%;
-    perspective: 1000px;
+    > .block {
+      position: absolute;
+      height: 100%;
+      width: 30%;
+      perspective: 1000px;
 
-    &:nth-of-type(1) {
-      height: 80%;
-      top: 10%;
-      left: -100%;
-      width: 15%;
-      animation: slideBlockOne 0.2s 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)
-        forwards;
+      &:nth-of-type(1) {
+        height: 80%;
+        top: 10%;
+        left: -100%;
+        width: 15%;
+        animation: slideBlockOne 0.2s 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)
+          forwards;
+      }
+
+      &:nth-of-type(2) {
+        top: 0;
+        left: -100%;
+        animation: slideBlockTwo 0.2s 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)
+          forwards;
+      }
+
+      &:nth-of-type(3) {
+        height: 80%;
+        top: 10%;
+        width: 15%;
+        left: -100%;
+        animation: slideBlockThree 0.2s 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)
+          forwards;
+      }
     }
 
-    &:nth-of-type(2) {
+    > .block > .side {
+      position: absolute;
       top: 0;
-      left: -100%;
-      animation: slideBlockTwo 0.2s 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)
-        forwards;
+      left: 0;
+      background-size: auto 100%;
+      box-shadow: -1vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
+
+      &.-main {
+        height: 100%;
+        width: 100%;
+        transform: rotateY(30deg);
+        transform-origin: 0 50%;
+      }
+
+      &.-left {
+        height: 100%;
+        width: 20%;
+        transform-origin: 0 50%;
+        transform: rotateY(-60deg) translateX(-100%);
+        filter: brightness(40%);
+      }
     }
 
-    &:nth-of-type(3) {
-      height: 80%;
-      top: 10%;
-      width: 15%;
-      left: -100%;
-      animation: slideBlockThree 0.2s 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)
-        forwards;
-    }
-  }
+    > .block:nth-of-type(1) > .side {
+      transition-delay: 200;
 
-  > .block > .side {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: auto 100%;
-    box-shadow: -1vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
+      &.-main {
+        background-position: 4% 50%;
+        background-size: auto 130%;
+      }
 
-    &.-main {
-      height: 100%;
-      width: 100%;
-      transform: rotateY(30deg);
-      transform-origin: 0 50%;
+      &.-left {
+        background-position: 0 50%;
+        background-size: auto 130%;
+      }
     }
 
-    &.-left {
-      height: 100%;
-      width: 20%;
-      transform-origin: 0 50%;
-      transform: rotateY(-60deg) translateX(-100%);
-      filter: brightness(40%);
-    }
-  }
+    > .block:nth-of-type(2) > .side {
+      transition-delay: 400;
 
-  > .block:nth-of-type(1) > .side {
-    transition-delay: 200;
+      &.-main {
+        background-position: 50% 0;
+      }
 
-    &.-main {
-      background-position: 4% 50%;
-      background-size: auto 130%;
+      &.-left {
+        background-position: 28.5% 0;
+      }
     }
 
-    &.-left {
-      background-position: 0 50%;
-      background-size: auto 130%;
-    }
-  }
+    > .block:nth-of-type(3) > .side {
+      transition-delay: 600;
 
-  > .block:nth-of-type(2) > .side {
-    transition-delay: 400;
+      &.-main {
+        background-position: 96% 50%;
+        background-size: auto 130%;
+      }
 
-    &.-main {
-      background-position: 50% 0;
-    }
-
-    &.-left {
-      background-position: 28.5% 0;
+      &.-left {
+        background-position: 78% 50%;
+        background-size: auto 130%;
+      }
     }
   }
 
-  > .block:nth-of-type(3) > .side {
-    transition-delay: 600;
-
-    &.-main {
-      background-position: 96% 50%;
-      background-size: auto 130%;
+  .details-container {
+    .rating-and-length {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 10px;
+      grid-gap: 0.5rem;
+      .length {
+        justify-self: flex-end;
+        font-family: "SirinStencil";
+      }
+      .length,
+      .rating {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+      }
     }
+    .progress-bar {
+      margin-bottom: 1rem;
+    }
+    .chips {
+      display: grid;
+      justify-content: flex-end;
+    }
+  }
 
-    &.-left {
-      background-position: 78% 50%;
-      background-size: auto 130%;
+  :host {
+    .mat-list-item {
+      color: black;
+    }
+    .mat-divider {
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
     }
   }
 }

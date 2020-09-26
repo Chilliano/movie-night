@@ -1,30 +1,37 @@
 <div class="genres">
-  <app-button
-    [config]="{
-      text: 'Genre',
-      icon: 'filter_list',
-      backgroundColor: color.$secondary,
-      disabled: getRouteUrl() !== '/movies'
-    }"
-    (clicked)="toggleList()"
-  ></app-button>
+  <div class="filter">
+    <p *ngIf="!genresList.selectedOptions.isEmpty()">ACTIVE</p>
+    <app-button
+      [config]="{
+        text: 'Genre',
+        icon: 'filter_list',
+        backgroundColor: color.$secondary,
+        disabled: getRouteUrl() !== '/movies'
+      }"
+      (clicked)="toggleList()"
+    ></app-button>
+  </div>
 
   <div class="list" [ngClass]="{ hide: !displayList }">
-    <app-button
-      (clicked)="onFilterByGenre(genresList.selectedOptions.selected)"
-      [config]="{
-        text: 'Filter By Genre',
-        color: 'white'
-      }"
-    ></app-button>
-    <app-button
-      (clicked)="genresList.deselectAll(); onFilterByGenre([])"
-      [config]="{ text: 'Reset', color: 'white' }"
-    ></app-button>
-    <mat-selection-list #genresList>
-      <mat-list-option *ngFor="let genre of genres" [value]="genre">
-        {{ genre }}
-      </mat-list-option>
-    </mat-selection-list>
+    <div class="buttons">
+      <app-button
+        (clicked)="onFilterByGenre(genresList.selectedOptions.selected)"
+        [config]="{
+          text: 'Filter By Genre',
+          color: 'white'
+        }"
+      ></app-button>
+      <app-button
+        (clicked)="genresList.deselectAll(); onFilterByGenre([])"
+        [config]="{ text: 'Reset', color: 'white' }"
+      ></app-button>
+    </div>
+    <div class="list-container">
+      <mat-selection-list #genresList>
+        <mat-list-option *ngFor="let genre of genres" [value]="genre">
+          {{ genre }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
   </div>
 </div>

@@ -17,10 +17,6 @@ export class HeaderComponent {
   }
 
   getRouteUrl(): string {
-    console.log(
-      'HeaderComponent -> getRouteUrl -> this.routerService.getRouter();',
-      this.routerService.getRouter()
-    );
     return this.routerService.getRouter();
   }
 }
