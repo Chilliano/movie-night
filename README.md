@@ -8,6 +8,10 @@
 
   - open browser included
 
+## Deployment Steps
+
+- ng build --prod (adding prod flag to significantly reduce bundle sizes)
+
 ## Build Steps
 
 - @ngrx/store
