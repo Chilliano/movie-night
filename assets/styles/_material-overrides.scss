@@ -1,0 +1,17 @@
+@import "src/assets/styles/variables";
+
+.mat-form-field-label {
+  color: $primary;
+}
+
+.mat-button {
+  border-top: 2px solid $secondary !important;
+  border-bottom: 2px solid $secondary !important;
+  background-color: $primary;
+}
+
+.mat-icon {
+  @include respond("phone") {
+    font-size: 20px;
+  }
+}

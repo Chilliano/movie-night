@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1;
+  height: 100%;
+  min-height: 100%;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+p {
+  margin: 0 !important;
+}
