@@ -68,7 +68,7 @@
     <div class="chips">
       <mat-chip-list aria-label="Genres">
         <mat-chip
-          [selectable]="false"
+          (click)="onChipSelect(genre)"
           *ngFor="let genre of (selectedMovie$ | async).genres | slice: 0:2"
           color="primary"
           selected

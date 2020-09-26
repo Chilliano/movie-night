@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatInputModule,
     MatProgressBarModule,
     MatChipsModule,
+    MatTooltipModule,
   ],
 })
 export class FeatureModule {}

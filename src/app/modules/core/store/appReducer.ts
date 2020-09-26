@@ -32,7 +32,7 @@ export const _appReducer = createReducer(
     return {
       ...state,
       movies: selectedGenres.length
-        ? filterByGenre(state.movies, selectedGenres)
+        ? filterByGenre(initialState.movies, selectedGenres)
         : initialState.movies,
       selectedGenres,
       filterTerm: '',

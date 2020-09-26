@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Color } from '@assets/styles/_color';
 import { MoviesService } from '@services/movies/movies.service';
 import { RouterService } from '@services/router/router.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-genres',
@@ -11,6 +12,7 @@ import { RouterService } from '@services/router/router.service';
 export class GenresComponent implements OnInit {
   displayList = false;
   color = new Color();
+  chosenGenres$: Observable<string[]>;
   genres = [
     'action',
     'adventure',
@@ -29,7 +31,9 @@ export class GenresComponent implements OnInit {
     private routerService: RouterService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.chosenGenres$ = this.moviesService.getSelectedGenres();
+  }
 
   onFilterByGenre(genres) {
     const genreStrings = genres.map((genre) => genre.value);
@@ -40,15 +44,9 @@ export class GenresComponent implements OnInit {
   toggleList() {
     console.log('toggled');
     this.displayList = !this.displayList;
-
-    // this.moviesService.resetSearch();
   }
 
   getRouteUrl(): string {
-    console.log(
-      'HeaderComponent -> getRouteUrl -> this.routerService.getRouter();',
-      this.routerService.getRouter()
-    );
     return this.routerService.getRouter();
   }
 }

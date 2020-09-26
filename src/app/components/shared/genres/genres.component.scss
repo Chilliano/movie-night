@@ -1,5 +1,11 @@
 @import "src/assets/styles/variables";
 :host {
+  .genres {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 0.5rem;
+    align-items: center;
+  }
   .list {
     top: $header-height;
     bottom: unset !important;

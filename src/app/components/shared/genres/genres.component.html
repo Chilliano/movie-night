@@ -1,6 +1,19 @@
 <div class="genres">
+  <div class="current-filters" *ngIf="(chosenGenres$ | async).length">
+    <button
+      [color]="'primary'"
+      mat-raised-button
+      #tooltip="matTooltip"
+      [matTooltip]="chosenGenres$ | async"
+      matTooltipClass="custom-tooltip"
+      matTooltipHideDelay="100000"
+      aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+    >
+      Filters Active List
+    </button>
+  </div>
+
   <div class="filter">
-    <p *ngIf="!genresList.selectedOptions.isEmpty()">ACTIVE</p>
     <app-button
       [config]="{
         text: 'Genre',
@@ -28,7 +41,11 @@
     </div>
     <div class="list-container">
       <mat-selection-list #genresList>
-        <mat-list-option *ngFor="let genre of genres" [value]="genre">
+        <mat-list-option
+          *ngFor="let genre of genres"
+          [value]="genre"
+          [selected]="(chosenGenres$ | async).indexOf(genre) > -1"
+        >
           {{ genre }}
         </mat-list-option>
       </mat-selection-list>

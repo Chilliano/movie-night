@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-github-pages": "ng build --prod --base-href https://chilliano.github.io/movie-night/"
+    "build-github-pages": "ng build --prod --base-href https://chilliano.github.io/movie-night/ && ngh --dir dist/betsson-final"
   },
   "private": true,
   "dependencies": {

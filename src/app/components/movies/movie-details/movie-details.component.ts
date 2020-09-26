@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { appearFromLeftAnimation } from '@animations/appear-from-left.animation';
 import { timeout } from 'rxjs/operators';
+import { RouterService } from '@services/router/router.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -63,7 +64,8 @@ export class MovieDetailsComponent implements OnInit {
   private sub: any;
   constructor(
     private route: ActivatedRoute,
-    private movieService: MoviesService
+    private movieService: MoviesService,
+    private routerService: RouterService
   ) {}
 
   ngOnInit() {
@@ -74,6 +76,12 @@ export class MovieDetailsComponent implements OnInit {
         this.updateProgressValue();
       }, 500);
     });
+  }
+
+  onChipSelect(genre) {
+    this.routerService.goHome();
+    this.movieService.resetSearch();
+    this.movieService.updateSelectedGenres([genre]);
   }
 
   updateProgressValue() {

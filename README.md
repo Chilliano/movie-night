@@ -10,7 +10,7 @@
 
 ## Deployment Steps
 
-- ng build --prod (adding prod flag to significantly reduce bundle sizes)
+- npm run build (adding prod flag to significantly reduce bundle sizes)
 
 ## Build Steps
 
@@ -25,6 +25,7 @@
 - Decided to remove the details on the coverpage to give more space to the image and when you click you will see details anyway.
 - ** Missing **
 
+- put filter-by-genre-button to stick at top of the list
 - absolute style imports
 - change movies per column during filter if it drops below 5
 - extract the input filter from the movies component
