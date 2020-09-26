@@ -18,6 +18,7 @@
 - @angular/material
 - @ngrx/store-devtools
 - @lazysizes (a fast (jank-free), SEO-friendly and self-initializing lazyloader for images ["Lazysizes" Github](https://github.com/afarkas/lazysizes))
+- ng build --prod --base-href https://chilliano.github.io/movie-night/
 
 ** Decisions **
 
