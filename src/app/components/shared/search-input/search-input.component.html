@@ -5,6 +5,7 @@
       <input
         (keyup)="updateFilterTerm($event)"
         matInput
+        autofocus
         placeholder="Search..."
         [value]="filterTerm$ | async"
       />
