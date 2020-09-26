@@ -2,10 +2,10 @@
 :host {
   .mat-grid-tile {
     transition: $general-transition;
-    opacity: 0.6;
+    // opacity: 0.6;
     &:hover {
       // box-shadow: $box-shadow-hover;
-      opacity: 1;
+      // opacity: 1;
     }
   }
 }

@@ -20,7 +20,12 @@
 - reset search term on home nav?
 - add check to see if search terms are different than already in state. if not, dont perform action
   ** Ideas **
-
+- • Title
+  • Running Time
+  • Rating
+  • Rotten Tomato Percentage
+  • some phrases maybe from reviewers scrolling like tokyo style
+  • image jagged and digital like a tokyo skyscraper
 - for favouriting specific movies, need snackbar to confirm add and remove. need to add to redux
 
 ```

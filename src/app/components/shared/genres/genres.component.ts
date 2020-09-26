@@ -38,8 +38,10 @@ export class GenresComponent implements OnInit {
   }
 
   toggleList() {
+    console.log('toggled');
     this.displayList = !this.displayList;
-    this.moviesService.resetSearch();
+
+    // this.moviesService.resetSearch();
   }
 
   getRouteUrl(): string {

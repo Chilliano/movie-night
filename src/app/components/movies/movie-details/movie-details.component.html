@@ -1,10 +1,44 @@
-<div>
-  Showing product details for product: {{ (selectedMovie$ | async)?.name }}
-  <img
-    src="{{
-      '../../../../../../assets/images/movie-covers/' +
-        (selectedMovie$ | async)?.img
-    }}"
-    alt=""
-  />
+<div class="example">
+  <div class="block">
+    <div
+      class="side -main"
+      [ngStyle]="{
+        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+      }"
+    ></div>
+    <div
+      class="side -left"
+      [ngStyle]="{
+        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+      }"
+    ></div>
+  </div>
+  <div class="block">
+    <div
+      class="side -main"
+      [ngStyle]="{
+        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+      }"
+    ></div>
+    <div
+      class="side -left"
+      [ngStyle]="{
+        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+      }"
+    ></div>
+  </div>
+  <div class="block">
+    <div
+      class="side -main"
+      [ngStyle]="{
+        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+      }"
+    ></div>
+    <div
+      class="side -left"
+      [ngStyle]="{
+        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
+      }"
+    ></div>
+  </div>
 </div>
