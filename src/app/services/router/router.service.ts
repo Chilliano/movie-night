@@ -15,7 +15,7 @@ export class RouterService {
     return this.router.url;
   }
 
-  goToMoviesDetailsPage(id): void {
+  goToMoviesDetailsPage(id: number): void {
     this.router.navigate(['/movies', `${id}`]);
   }
 }

@@ -1,8 +1,6 @@
 import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import { lazySizes } from 'lazysizes';
-// quick and dirty fix, add to tsconfig later
-// declare var require: any;
 
 @Directive({
   selector: '[lazyload]',
@@ -13,7 +11,7 @@ export class LazySizesDirective {
   public tempImage: string =
     'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
   @Input('lazyload') imgSrc: string;
-  public img;
+  public img: string;
 
   ngOnInit() {
     this.img = require(`../../assets/images/movie-covers/${this.imgSrc}`).default;

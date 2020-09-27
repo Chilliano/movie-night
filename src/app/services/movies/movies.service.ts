@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+// models
 import { MovieModel } from '@models/movie.model';
-import { Store } from '@ngrx/store';
+// services
 import { RouterService } from '@services/router/router.service';
+// store
+import { Store } from '@ngrx/store';
+import AppState from '@store/app.state';
 import {
   updateGenresSelected,
   updateFilterTerm,
   updateSelectedMovie,
 } from '@store/actions/movie.actions';
-import AppState from '@store/app.state';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +21,7 @@ export class MoviesService {
     private routerService: RouterService
   ) {}
 
+  // selectors
   getFilterTerm() {
     return this.store.select((state) => state.app.filterTerm);
   }
@@ -30,6 +34,7 @@ export class MoviesService {
     return this.store.select((state) => state.app.movies);
   }
 
+  // actions
   updateFilterTerm(value) {
     this.store.dispatch(updateFilterTerm({ filterTerm: value }));
   }

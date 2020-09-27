@@ -7,7 +7,7 @@
 
 # Betsson Movies List Application
 
-Short excercise to display filtering, redux setup, angular material, theming, and styling. I wanted it to have a fast paced feel, with a layered menu system with only one movement between details and main page.
+Short excercise to display redux, filtering, testing, angular material, theming, and styling. I wanted it to have a fast paced feel, with a layered menu system with only one movement between details and main page.
 
 ## See it in action
 

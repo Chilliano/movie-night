@@ -2,7 +2,6 @@ import { MovieModel } from '@models/movie.model';
 import { createAction, props } from '@ngrx/store';
 import * as movieTypes from '../movie.types';
 
-// actions
 export const setAllMovies = createAction(movieTypes.SET_MOVIES);
 export const getAllMovies = createAction(movieTypes.GET_MOVIES);
 export const getOneMovie = createAction(

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+// color
 import { Color } from '@assets/styles/_color';
-import { MoviesService } from '@services/movies/movies.service';
-import { RouterService } from '@services/router/router.service';
+// services
+import { MoviesService, RouterService } from '@services/index';
+// rxjs
 import { Observable } from 'rxjs';
 
 @Component({
@@ -42,7 +45,6 @@ export class GenresComponent implements OnInit {
   }
 
   toggleList() {
-    console.log('toggled');
     this.displayList = !this.displayList;
   }
 

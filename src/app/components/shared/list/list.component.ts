@@ -1,13 +1,12 @@
-import { ListConfigModel } from '@models/list.model';
 import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
-import { MovieModel } from '@models/movie.model';
+
+import { ListConfigModel, MovieModel } from '@models/index';
 
 @Component({
   selector: 'app-list',
@@ -15,10 +14,7 @@ import { MovieModel } from '@models/movie.model';
   styleUrls: ['./list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
   @Input() config: ListConfigModel;
   @Output() clicked: EventEmitter<MovieModel> = new EventEmitter();
-  constructor() {}
-
-  ngOnInit() {}
 }
