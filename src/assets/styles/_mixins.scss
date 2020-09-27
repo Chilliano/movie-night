@@ -7,13 +7,13 @@
     }
   }
   @if $breakpoint==tab {
-    @media (max-width: $breakpoint-tab) {
+    @media (min-width: $breakpoint-tab) {
       // 922px
       @content;
     }
   }
   @if $breakpoint==desktop {
-    @media (max-width: $breakpoint-desktop) {
+    @media (min-width: $breakpoint-desktop) {
       // 1312px
       @content;
     }

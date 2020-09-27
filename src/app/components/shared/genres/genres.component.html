@@ -1,5 +1,12 @@
 <div class="genres">
-  <div class="current-filters" *ngIf="(chosenGenres$ | async).length">
+  <div
+    class="current-filters"
+    *ngIf="(chosenGenres$ | async).length"
+    style="
+      box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #ff7459,
+        0 0 140px 90px #e42973;
+    "
+  >
     <button
       [color]="'primary'"
       mat-raised-button
@@ -9,7 +16,7 @@
       matTooltipHideDelay="100000"
       aria-label="Button that displays a tooltip that hides when scrolled out of the container"
     >
-      Filters Active List
+      Filters Active
     </button>
   </div>
 
