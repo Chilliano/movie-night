@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+// rxjs
 import { Observable } from 'rxjs';
+// models
 import { MovieModel } from 'app/models/movie.model';
+// services
 import { MoviesService } from 'app/services/movies/movies.service';
 
 @Component({
@@ -9,12 +12,15 @@ import { MoviesService } from 'app/services/movies/movies.service';
   styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent implements OnInit {
+  // selectors
   movies$: Observable<MovieModel[]>;
   selectedGenres$: Observable<string[]>;
   filterTerm$: Observable<string>;
+
   localFilterTermRef = '';
   rowHeight = '2:1';
   hideList = false;
+
   constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {

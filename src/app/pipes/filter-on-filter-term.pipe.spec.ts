@@ -1,5 +1,5 @@
-import { MovieModel } from '../models/movie.model';
 import { FilterOnFilterTermPipe } from './filter-on-filter-term.pipe';
+import { MovieModel } from '@models/movie.model';
 
 describe('PhonenumberPipe', () => {
   let pipe: FilterOnFilterTermPipe;

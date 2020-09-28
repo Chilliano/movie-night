@@ -1,22 +1,6 @@
-@import "../../../../assets/styles/mixins";
 @import "../../../../assets/styles/variables";
-@keyframes slideBlockOne {
-  100% {
-    left: 17%;
-  }
-}
+@import "../../../../assets/styles/mixins";
 
-@keyframes slideBlockTwo {
-  100% {
-    left: 35%;
-  }
-}
-
-@keyframes slideBlockThree {
-  100% {
-    left: 64%;
-  }
-}
 .outer-container {
   display: grid;
   height: 100%;
@@ -162,5 +146,23 @@
     .mat-divider {
       border-top: 1px solid rgba(0, 0, 0, 0.12);
     }
+  }
+}
+
+@keyframes slideBlockOne {
+  100% {
+    left: 17%;
+  }
+}
+
+@keyframes slideBlockTwo {
+  100% {
+    left: 35%;
+  }
+}
+
+@keyframes slideBlockThree {
+  100% {
+    left: 64%;
   }
 }

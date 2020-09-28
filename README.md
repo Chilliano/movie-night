@@ -7,7 +7,7 @@
 
 # Betsson Movies List Application
 
-Short excercise to display redux, filtering, testing, angular material, theming, and styling. I wanted it to have a fast paced feel, with a layered menu system with only one movement between details and main page.
+Short excercise to display redux, filtering, testing, angular material, angular/media-query animations, theming, and styling. I wanted it to have a fast paced feel, with a layered menu system with only one movement between details and main page.
 
 ## See it in action
 
@@ -70,6 +70,6 @@ Short excercise to display redux, filtering, testing, angular material, theming,
 - change movies per column during filter if it drops below 5
 - extract the input filter from the movies component
 - extract everything from movie-details component
-- indicator that the list is currently being filtered
 - indicate which area filter term was found - Description, title etc... and display to user
 - reset search term on home nav?
+- use genres enum correctly

@@ -1,6 +1,6 @@
-import { MovieModel } from 'app/models/movie.model';
 import { Pipe, PipeTransform } from '@angular/core';
-import { parseString } from '../functions/parse-string.function';
+import { parseString } from '@functions/parse-string.function';
+import { MovieModel } from '@models/movie.model';
 
 @Pipe({
   name: 'filterOnFilterTerm',

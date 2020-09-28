@@ -1,5 +1,5 @@
 import { MoviesData } from '@assets/movie.mock-data';
-import { MovieModel } from 'app/models/movie.model';
+import { MovieModel } from '@models/movie.model';
 
 export default class AppState {
   constructor(

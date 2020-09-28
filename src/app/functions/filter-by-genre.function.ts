@@ -1,4 +1,4 @@
-import { MovieModel } from './../models/movie.model';
+import { MovieModel } from '@models/movie.model';
 
 export const filterByGenre = (list: MovieModel[], genres: string[]) => {
   if (list.length && genres.length) {

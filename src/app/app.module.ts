@@ -14,7 +14,6 @@ import { AppRoutingModule } from 'app/app-routing.module';
 // components
 import { AppComponent } from 'app/app.component';
 import { HeaderComponent } from '@components/layout/header/header.component';
-import { FooterComponent } from '@components/layout/footer/footer.component';
 import { MoviesComponent } from '@components/movies/movies.component';
 import { GridItemComponent } from '@components/layout/grid/grid-item/grid-item.component';
 import { ButtonComponent } from '@components/shared/button/button.component';
@@ -35,7 +34,6 @@ import { LazySizesDirective } from '@directives/lazySizes.directive';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     MoviesComponent,
     MovieDetailsComponent,
     GridComponent,

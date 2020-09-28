@@ -6,7 +6,7 @@ import { Color } from '@assets/styles/_color';
 import { MoviesService, RouterService } from '@services/index';
 // rxjs
 import { Observable } from 'rxjs';
-
+import { GenreTypes } from '@store/enums/genre.enum';
 @Component({
   selector: 'app-genres',
   templateUrl: './genres.component.html',

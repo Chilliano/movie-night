@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieModel } from '@models/movie.model';
-import { MoviesService } from '@services/movies/movies.service';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+// models
+import { MovieModel } from '@models/movie.model';
+// services
+import { MoviesService, RouterService } from '@services/index';
+// rxjs
+import { Observable } from 'rxjs';
+// animations
 import { appearFromLeftAnimation } from '@animations/appear-from-left.animation';
-import { timeout } from 'rxjs/operators';
-import { RouterService } from '@services/router/router.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -14,51 +16,8 @@ import { RouterService } from '@services/router/router.service';
   animations: [appearFromLeftAnimation],
 })
 export class MovieDetailsComponent implements OnInit {
+  // to create filling effect
   progressValue = 0;
-  items = [
-    ` <div class="block">
-  <div
-    class="side -main"
-    [ngStyle]="{
-      'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-    }"
-  ></div>
-  <div
-    class="side -left"
-    [ngStyle]="{
-      'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-    }"
-  ></div>
-</div>`,
-    ` <div class="block">
-    <div
-      class="side -main"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
-    <div
-      class="side -left"
-      [ngStyle]="{
-        'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-      }"
-    ></div>
-  </div>`,
-    ` <div class="block">
-<div
-  class="side -main"
-  [ngStyle]="{
-    'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-  }"
-></div>
-<div
-  class="side -left"
-  [ngStyle]="{
-    'background-image': 'url(' + (selectedMovie$ | async)?.img + ')'
-  }"
-></div>
-</div>`,
-  ];
   selectedMovie$: Observable<MovieModel>;
   id: number;
   private sub: any;

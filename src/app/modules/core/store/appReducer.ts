@@ -1,7 +1,6 @@
 import { initializeState } from '@store/app.state';
 import { createReducer, on } from '@ngrx/store';
 import * as MovieActions from '@store/actions/movie.actions';
-
 import { filterByGenre } from '@functions/filter-by-genre.function';
 
 export const initialState = initializeState();

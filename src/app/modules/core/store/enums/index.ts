@@ -1,1 +1,1 @@
-export * from './genre.types';
+export * from './genre.enum';
